@@ -1,0 +1,254 @@
+{
+    "streckenprofile": [
+        {
+            "name": "Esslingen am Neckar nach Stuttgart",
+            "start": "Esslingen am Neckar",
+            "ziel": "Stuttgart",
+            "gesamtdistanz_km": 17,
+            "hoehenmeter_bergauf": 120,
+            "hoehenmeter_bergab": 95,
+            "segmente": [
+                {
+                    "typ": "Stadt",
+                    "distanz_km": 8,
+                    "durchschnittsgeschwindigkeit_kmh": 35
+                },
+                {
+                    "typ": "Landstraße",
+                    "distanz_km": 5,
+                    "durchschnittsgeschwindigkeit_kmh": 70
+                },
+                {
+                    "typ": "Stadt",
+                    "distanz_km": 4,
+                    "durchschnittsgeschwindigkeit_kmh": 30
+                }
+            ]
+        },
+        {
+      "name": "Reutlingen nach Ulm",
+      "start": "Reutlingen",
+      "ziel": "Ulm",
+      "gesamtdistanz_km": 95,
+      "hoehenmeter_bergauf": 420,
+      "hoehenmeter_bergab": 380,
+      "segmente": [
+        {
+          "typ": "Stadt",
+          "distanz_km": 12,
+          "durchschnittsgeschwindigkeit_kmh": 40
+        },
+        {
+          "typ": "Landstraße",
+          "distanz_km": 38,
+          "durchschnittsgeschwindigkeit_kmh": 85
+        },
+        {
+          "typ": "Autobahn",
+          "distanz_km": 45,
+          "durchschnittsgeschwindigkeit_kmh": 120
+        }
+      ]
+    },
+    {
+      "name": "Stuttgart nach München",
+      "start": "Stuttgart",
+      "ziel": "München",
+      "gesamtdistanz_km": 220,
+      "hoehenmeter_bergauf": 760,
+      "hoehenmeter_bergab": 690,
+      "segmente": [
+        {
+          "typ": "Stadt",
+          "distanz_km": 20,
+          "durchschnittsgeschwindigkeit_kmh": 35
+        },
+        {
+          "typ": "Autobahn",
+          "distanz_km": 180,
+          "durchschnittsgeschwindigkeit_kmh": 130
+        },
+        {
+          "typ": "Stadt",
+          "distanz_km": 20,
+          "durchschnittsgeschwindigkeit_kmh": 40
+        }
+      ]
+    },
+    {
+      "name": "Freudenstadt nach Stuttgart",
+      "start": "Freudenstadt",
+      "ziel": "Stuttgart",
+      "gesamtdistanz_km": 90,
+      "hoehenmeter_bergauf": 540,
+      "hoehenmeter_bergab": 710,
+      "segmente": [
+        {
+          "typ": "Landstraße",
+          "distanz_km": 55,
+          "durchschnittsgeschwindigkeit_kmh": 75
+        },
+        {
+          "typ": "Autobahn",
+          "distanz_km": 25,
+          "durchschnittsgeschwindigkeit_kmh": 120
+        },
+        {
+          "typ": "Stadt",
+          "distanz_km": 10,
+          "durchschnittsgeschwindigkeit_kmh": 30
+        }
+      ]
+    },
+    {
+      "name": "Darmstadt nach Frankfurt am Main",
+      "start": "Darmstadt",
+      "ziel": "Frankfurt am Main",
+      "gesamtdistanz_km": 35,
+      "hoehenmeter_bergauf": 110,
+      "hoehenmeter_bergab": 140,
+      "segmente": [
+        {
+          "typ": "Stadt",
+          "distanz_km": 10,
+          "durchschnittsgeschwindigkeit_kmh": 35
+        },
+        {
+          "typ": "Autobahn",
+          "distanz_km": 20,
+          "durchschnittsgeschwindigkeit_kmh": 100
+        },
+        {
+          "typ": "Stadt",
+          "distanz_km": 5,
+          "durchschnittsgeschwindigkeit_kmh": 30
+        }
+      ]
+    },
+    {
+      "name": "Frankfurt am Main nach Köln",
+      "start": "Frankfurt am Main",
+      "ziel": "Köln",
+      "gesamtdistanz_km": 190,
+      "hoehenmeter_bergauf": 680,
+      "hoehenmeter_bergab": 640,
+      "segmente": [
+        {
+          "typ": "Stadt",
+          "distanz_km": 15,
+          "durchschnittsgeschwindigkeit_kmh": 40
+        },
+        {
+          "typ": "Autobahn",
+          "distanz_km": 160,
+          "durchschnittsgeschwindigkeit_kmh": 125
+        },
+        {
+          "typ": "Stadt",
+          "distanz_km": 15,
+          "durchschnittsgeschwindigkeit_kmh": 35
+        }
+      ]
+    },
+    {
+      "name": "Berlin nach Hannover",
+      "start": "Berlin",
+      "ziel": "Hannover",
+      "gesamtdistanz_km": 285,
+      "hoehenmeter_bergauf": 320,
+      "hoehenmeter_bergab": 300,
+      "segmente": [
+        {
+          "typ": "Stadt",
+          "distanz_km": 25,
+          "durchschnittsgeschwindigkeit_kmh": 35
+        },
+        {
+          "typ": "Autobahn",
+          "distanz_km": 240,
+          "durchschnittsgeschwindigkeit_kmh": 135
+        },
+        {
+          "typ": "Stadt",
+          "distanz_km": 20,
+          "durchschnittsgeschwindigkeit_kmh": 40
+        }
+      ]
+    },
+    {
+      "name": "Hannover nach Hamburg",
+      "start": "Hannover",
+      "ziel": "Hamburg",
+      "gesamtdistanz_km": 155,
+      "hoehenmeter_bergauf": 180,
+      "hoehenmeter_bergab": 170,
+      "segmente": [
+        {
+          "typ": "Stadt",
+          "distanz_km": 15,
+          "durchschnittsgeschwindigkeit_kmh": 35
+        },
+        {
+          "typ": "Autobahn",
+          "distanz_km": 130,
+          "durchschnittsgeschwindigkeit_kmh": 125
+        },
+        {
+          "typ": "Stadt",
+          "distanz_km": 10,
+          "durchschnittsgeschwindigkeit_kmh": 30
+        }
+      ]
+    },
+    {
+      "name": "Stuttgart nach Berlin",
+      "start": "Stuttgart",
+      "ziel": "Berlin",
+      "gesamtdistanz_km": 635,
+      "hoehenmeter_bergauf": 1250,
+      "hoehenmeter_bergab": 1180,
+      "segmente": [
+        {
+          "typ": "Stadt",
+          "distanz_km": 20,
+          "durchschnittsgeschwindigkeit_kmh": 35
+        },
+        {
+          "typ": "Autobahn",
+          "distanz_km": 590,
+          "durchschnittsgeschwindigkeit_kmh": 130
+        },
+        {
+          "typ": "Stadt",
+          "distanz_km": 25,
+          "durchschnittsgeschwindigkeit_kmh": 30
+        }
+      ]
+    },
+    {
+      "name": "München nach Hamburg",
+      "start": "München",
+      "ziel": "Hamburg",
+      "gesamtdistanz_km": 780,
+      "hoehenmeter_bergauf": 1480,
+      "hoehenmeter_bergab": 1420,
+      "segmente": [
+        {
+          "typ": "Stadt",
+          "distanz_km": 25,
+          "durchschnittsgeschwindigkeit_kmh": 35
+        },
+        {
+          "typ": "Autobahn",
+          "distanz_km": 730,
+          "durchschnittsgeschwindigkeit_kmh": 135
+        },
+        {
+          "typ": "Stadt",
+          "distanz_km": 25,
+          "durchschnittsgeschwindigkeit_kmh": 30
+        }
+      ]
+    }
+  ]
+}
