@@ -1,0 +1,68 @@
+{
+  "wetterprofile": [
+    {
+      "name": "Sonniger Sommertag",
+      "temperatur_c": 28,
+      "regen_mm_pro_h": 0,
+      "windgeschwindigkeit_kmh": 12,
+      "luftfeuchtigkeit_prozent": 45,
+      "wetterzustand": "sonnig"
+    },
+    {
+      "name": "Leichter Regen",
+      "temperatur_c": 17,
+      "regen_mm_pro_h": 2.5,
+      "windgeschwindigkeit_kmh": 20,
+      "luftfeuchtigkeit_prozent": 78,
+      "wetterzustand": "regnerisch"
+    },
+    {
+      "name": "Starker Regen und Wind",
+      "temperatur_c": 11,
+      "regen_mm_pro_h": 9.8,
+      "windgeschwindigkeit_kmh": 55,
+      "luftfeuchtigkeit_prozent": 92,
+      "wetterzustand": "sturm"
+    },
+    {
+      "name": "Winterliche Bedingungen",
+      "temperatur_c": -3,
+      "regen_mm_pro_h": 1.2,
+      "windgeschwindigkeit_kmh": 25,
+      "luftfeuchtigkeit_prozent": 85,
+      "wetterzustand": "schnee"
+    },
+    {
+      "name": "Bewölkter Herbsttag",
+      "temperatur_c": 9,
+      "regen_mm_pro_h": 0.4,
+      "windgeschwindigkeit_kmh": 18,
+      "luftfeuchtigkeit_prozent": 70,
+      "wetterzustand": "bewölkt"
+    },
+    {
+      "name": "Nebliger Morgen",
+      "temperatur_c": 6,
+      "regen_mm_pro_h": 0,
+      "windgeschwindigkeit_kmh": 5,
+      "luftfeuchtigkeit_prozent": 96,
+      "wetterzustand": "nebel"
+    },
+    {
+      "name": "Heißer Sommertag",
+      "temperatur_c": 34,
+      "regen_mm_pro_h": 0,
+      "windgeschwindigkeit_kmh": 10,
+      "luftfeuchtigkeit_prozent": 35,
+      "wetterzustand": "heiß"
+    },
+    {
+      "name": "Gewitter",
+      "temperatur_c": 21,
+      "regen_mm_pro_h": 14.5,
+      "windgeschwindigkeit_kmh": 70,
+      "luftfeuchtigkeit_prozent": 88,
+      "wetterzustand": "gewitter"
+    }
+  ]
+}
