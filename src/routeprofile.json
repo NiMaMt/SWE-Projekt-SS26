@@ -1,32 +1,32 @@
 {
-    "streckenprofile": [
+  "streckenprofile": [
+    {
+      "name": "Esslingen am Neckar -> Stuttgart",
+      "start": "Esslingen am Neckar",
+      "ziel": "Stuttgart",
+      "gesamtdistanz_km": 17,
+      "hoehenmeter_bergauf": 120,
+      "hoehenmeter_bergab": 95,
+      "segmente": [
         {
-            "name": "Esslingen am Neckar nach Stuttgart",
-            "start": "Esslingen am Neckar",
-            "ziel": "Stuttgart",
-            "gesamtdistanz_km": 17,
-            "hoehenmeter_bergauf": 120,
-            "hoehenmeter_bergab": 95,
-            "segmente": [
-                {
-                    "typ": "Stadt",
-                    "distanz_km": 8,
-                    "durchschnittsgeschwindigkeit_kmh": 35
-                },
-                {
-                    "typ": "Landstraße",
-                    "distanz_km": 5,
-                    "durchschnittsgeschwindigkeit_kmh": 70
-                },
-                {
-                    "typ": "Stadt",
-                    "distanz_km": 4,
-                    "durchschnittsgeschwindigkeit_kmh": 30
-                }
-            ]
+          "typ": "Stadt",
+          "distanz_km": 8,
+          "durchschnittsgeschwindigkeit_kmh": 35
         },
         {
-      "name": "Reutlingen nach Ulm",
+          "typ": "Landstraße",
+          "distanz_km": 5,
+          "durchschnittsgeschwindigkeit_kmh": 70
+        },
+        {
+          "typ": "Stadt",
+          "distanz_km": 4,
+          "durchschnittsgeschwindigkeit_kmh": 30
+        }
+      ]
+    },
+    {
+      "name": "Reutlingen -> Ulm",
       "start": "Reutlingen",
       "ziel": "Ulm",
       "gesamtdistanz_km": 95,
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "name": "Stuttgart nach München",
+      "name": "Stuttgart -> München",
       "start": "Stuttgart",
       "ziel": "München",
       "gesamtdistanz_km": 220,
@@ -76,7 +76,7 @@
       ]
     },
     {
-      "name": "Freudenstadt nach Stuttgart",
+      "name": "Freudenstadt -> Stuttgart",
       "start": "Freudenstadt",
       "ziel": "Stuttgart",
       "gesamtdistanz_km": 90,
@@ -101,7 +101,7 @@
       ]
     },
     {
-      "name": "Darmstadt nach Frankfurt am Main",
+      "name": "Darmstadt -> Frankfurt am Main",
       "start": "Darmstadt",
       "ziel": "Frankfurt am Main",
       "gesamtdistanz_km": 35,
@@ -126,7 +126,7 @@
       ]
     },
     {
-      "name": "Frankfurt am Main nach Köln",
+      "name": "Frankfurt am Main -> Köln",
       "start": "Frankfurt am Main",
       "ziel": "Köln",
       "gesamtdistanz_km": 190,
@@ -151,7 +151,7 @@
       ]
     },
     {
-      "name": "Berlin nach Hannover",
+      "name": "Berlin -> Hannover",
       "start": "Berlin",
       "ziel": "Hannover",
       "gesamtdistanz_km": 285,
@@ -176,7 +176,7 @@
       ]
     },
     {
-      "name": "Hannover nach Hamburg",
+      "name": "Hannover -> Hamburg",
       "start": "Hannover",
       "ziel": "Hamburg",
       "gesamtdistanz_km": 155,
@@ -201,7 +201,7 @@
       ]
     },
     {
-      "name": "Stuttgart nach Berlin",
+      "name": "Stuttgart -> Berlin",
       "start": "Stuttgart",
       "ziel": "Berlin",
       "gesamtdistanz_km": 635,
@@ -226,7 +226,7 @@
       ]
     },
     {
-      "name": "München nach Hamburg",
+      "name": "München -> Hamburg",
       "start": "München",
       "ziel": "Hamburg",
       "gesamtdistanz_km": 780,

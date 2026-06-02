@@ -1,5 +1,6 @@
 import json
 
+
 def load_weather_profiles():
     try:
         with open("src/weatherprofile.json", "r", encoding="utf-8") as daten_wetter:
@@ -11,9 +12,7 @@ def load_weather_profiles():
     except IOError as e:
         print(f"Ein-/Ausgabe-Fehler: {e}")
 
-    # Ausgabe der ganzen Datei
-    #print(json.dumps(wetterprofile, indent=4, ensure_ascii=False))
-    
+
 def load_vehicle_profiles():
     try:
         with open("src/vehicleprofile.json", "r", encoding="utf-8") as daten_fahrzeug:
@@ -25,8 +24,6 @@ def load_vehicle_profiles():
     except IOError as e:
         print(f"Ein-/Ausgabe-Fehler: {e}")
 
-    # Ausgabe der ganzen Datei
-    #print(json.dumps(fahrzeugprofile, indent=4, ensure_ascii=False))
 
 def load_route_profiles():
     try:
@@ -39,12 +36,27 @@ def load_route_profiles():
     except IOError as e:
         print(f"Ein-/Ausgabe-Fehler: {e}")
 
-    # Ausgabe der ganzen Datei
-    #print(json.dumps(fahrzeugprofile, indent=4, ensure_ascii=False))
 
 # Funktion zum Ausgeben der Namen aus weatherprofile.json
 def print_weather_profile():
     data = load_weather_profiles()
 
+    # In der print() Funktion "name ersetzen für das Attribut, was ausgegeben werden soll"
     for profil in data["wetterprofile"]:
+        print(profil["name"])
+
+
+# Funktion zum Ausgeben der Namen aus vehicleprofile.json
+def print_vehicle_profile():
+    data = load_vehicle_profiles()
+
+    for profil in data["fahrzeugprofile"]:
+        print(profil["name"])
+
+
+# Funktion zum Ausgeben der Namen aus routeprofile.json
+def print_route_profile():
+    data = load_route_profiles()
+
+    for profil in data["streckenprofile"]:
         print(profil["name"])
