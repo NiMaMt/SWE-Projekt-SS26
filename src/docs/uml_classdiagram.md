@@ -1,4 +1,4 @@
-::: mermaid
+``` mermaid
 
 classDiagram
     class RouteProfile {
@@ -36,4 +36,4 @@ classDiagram
 
 RouteProfile "1" *-- "1...*" Segment : enthält
 
-:::
+```
