@@ -1,8 +1,21 @@
 ```mermaid
+
+---
+config:
+  theme: 'base'
+  themeVariables:
+    primaryColor: '#06a4af'
+    primaryTextColor: '#fff'
+    primaryBorderColor: '#000000'
+    lineColor: '#dc143c'
+    secondaryColor: '#08858e'
+    tertiaryColor: '#fff'
+---
+
 classDiagram
 
     class VehicleProfile {
-        +name: string
+        +name: str
         +batteriekapazitaet_kwh: float
         +durchschnittlicher_basisverbrauch_wh_km: float
         +reichweite_km: float
@@ -10,9 +23,9 @@ classDiagram
     }
 
     class RouteProfile {
-        +name: string
-        +start: string
-        +ziel: string
+        +name: str
+        +start: str
+        +ziel: str
         +gesamtdistanz_km: int
         +hoehenmeter_bergauf: int
         +hoehenmeter_bergab: int
@@ -20,18 +33,24 @@ classDiagram
     }
 
     class Segment {
-        +typ: string
+        +typ: str
         +distanz_km: int
         +durchschnittsgeschwindigkeit_kmh: int
     }
 
     class WeatherProfile {
-        +name: string
+        +name: str
         +temperature_c: int
         +regen_mm_pro_h: float
         +windgeschwindigkeit_kmh: int
         +luftfeuchtigkeit_prozent: int
-        +wetterzustand: string
+        +wetterzustand: str
+    }
+
+    class DataLoader {
+        +load_weather_profiles(): List~WeatherProfile~
+        +load_vehicle_profiles(): List~VehicleProfile~
+        +load_route_profiles(): List~RouteProfile~
     }
 
     class Fahrtkonfiguration {
@@ -52,12 +71,16 @@ classDiagram
     }
 
     class Berechnungsergebnis {
-        +boolean fahrtMoeglich
+        +bool fahrtMoeglich
         +float fehlendeEnergieKWh : farbe_ändern
         +float restenergieKWh : farbe_ändern
     }
 
     RouteProfile "1" *-- "1...*" Segment : enthält
+    
+    DataLoader ..> VehicleProfile : lädt
+    DataLoader ..> RouteProfile : lädt
+    DataLoader ..> WeatherProfile : lädt
     Fahrtkonfiguration --> VehicleProfile
     Fahrtkonfiguration --> RouteProfile
     Fahrtkonfiguration --> WeatherProfile
