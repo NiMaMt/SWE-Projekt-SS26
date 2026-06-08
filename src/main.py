@@ -1,4 +1,5 @@
-import data_loader as dl
+from src.data_loader import DataLoader
+from src.console_ui import ConsoleUI
 
 
 def main():
