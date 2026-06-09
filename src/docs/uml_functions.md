@@ -54,26 +54,38 @@ classDiagram
     }
 
     class Fahrtkonfiguration {
-        +Fahrzeug fahrzeug
-        +Strecke strecke
-        +Wetterprofil wetterprofil
+        +VehicleProfile fahrzeug
+        +RouteProfile strecke
+        +WeatherProfile wetterprofil
         +float ladezustandProzent
-        +waehleFahrzeug(fahrzeug: Fahrzeug) void
-        +waehleStrecke(strecke: Strecke) void
-        +waehleWetterprofil(wetterprofil: Wetterprofil) void
+        +waehleFahrzeug(VehicleProfile: fahrzeug) void
+        +waehleStrecke(RouteProfile: strecke) void
+        +waehleWetterprofil(WeatherProfile: Wetterprofil) void
         +setzeLadezustand(prozent: float) void
+    }
+
+    class KonsolenUI {
+        +format_weather_list(list~WeatherProfile~): str
+        +print_weather(): void
+        +format_vehicle_list(list~VehicleProfile~): str
+        +print_vehicle(): void
+        +format_route_list(list~RouteProfile~): str
+        +print_route(): void
+        +format_segment_list(list~Segment~): str
+        +print_segment(list~Segment~): void
+
     }
 
     class ReichweitenService {
         +berechneVerfuegbareEnergie(config: Fahrtkonfiguration) float
-        +berechneEnergiebedarf(config: Fahrtkonfiguration) float : farbe_ändern
-        +pruefeFahrt(config: Fahrtkonfiguration) Berechnungsergebnis : farbe_ändern
+        +berechneEnergiebedarf(config: Fahrtkonfiguration) float
+        +pruefeFahrt(config: Fahrtkonfiguration) Berechnungsergebnis
     }
 
     class Berechnungsergebnis {
         +bool fahrtMoeglich
-        +float fehlendeEnergieKWh : farbe_ändern
-        +float restenergieKWh : farbe_ändern
+        +float fehlendeEnergieKWh
+        +float restenergieKWh
     }
 
     RouteProfile "1" *-- "1...*" Segment : enthält
@@ -86,4 +98,8 @@ classDiagram
     Fahrtkonfiguration --> WeatherProfile
     ReichweitenService --> Fahrtkonfiguration
     ReichweitenService --> Berechnungsergebnis
+    KonsolenUI --> VehicleProfile : nutzt
+    KonsolenUI --> RouteProfile : nutzt
+    KonsolenUI --> WeatherProfile : nutzt
+
 ```

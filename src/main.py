@@ -1,5 +1,5 @@
 from src.data_loader import DataLoader
-from src.console_ui import ConsoleUI
+from src.console_ui import KonsolenUI
 
 
 def main():

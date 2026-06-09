@@ -1,7 +1,7 @@
 from src.data_loader import DataLoader
 
 
-class ConsoleUI:
+class KonsolenUI:
 
     @staticmethod
     def format_weather_list(data):
@@ -33,7 +33,7 @@ class ConsoleUI:
     @staticmethod
     def print_weather():
         daten_wetter = DataLoader.load_weather_profiles()
-        print(ConsoleUI.format_weather_list(daten_wetter))
+        print(KonsolenUI.format_weather_list(daten_wetter))
 
     @staticmethod
     def format_vehicle_list(data):
@@ -64,7 +64,7 @@ class ConsoleUI:
     @staticmethod
     def print_vehicle():
         daten_fahrzeuge = DataLoader.load_vehicle_profiles()
-        print(ConsoleUI.format_vehicle_list(daten_fahrzeuge))
+        print(KonsolenUI.format_vehicle_list(daten_fahrzeuge))
 
     @staticmethod
     def format_route_list(data):
@@ -97,7 +97,7 @@ class ConsoleUI:
     @staticmethod
     def print_route():
         daten_routen = DataLoader.load_route_profiles()
-        print(ConsoleUI.format_route_list(daten_routen))
+        print(KonsolenUI.format_route_list(daten_routen))
 
     @staticmethod
     def format_segment_list(data):
@@ -124,4 +124,4 @@ class ConsoleUI:
     # Achtung. Hier Objekt von RoutenProfil übergeben
     @staticmethod
     def print_segment(route):
-        print(ConsoleUI.format_segment_list(route.segmente))
+        print(KonsolenUI.format_segment_list(route.segmente))

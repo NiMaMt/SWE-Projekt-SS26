@@ -1,4 +1,4 @@
-from src.console_ui import ConsoleUI
+from src.console_ui import KonsolenUI
 from src.weather_profile import WeatherProfile
 from src.route_profile import RouteProfile, Segment
 from src.vehicle_profile import VehicleProfile
@@ -12,7 +12,7 @@ def test_print_weather(monkeypatch, capsys):
         return test_data_weather
     
     monkeypatch.setattr("src.console_ui.DataLoader.load_weather_profiles", mock_load_weather_profile)
-    ConsoleUI.print_weather()
+    KonsolenUI.print_weather()
 
     # Fängt die Ausgabe ab
     captured = capsys.readouterr()
@@ -26,7 +26,7 @@ def test_print_vehicle(monkeypatch, capsys):
         return test_data_vehicle
     
     monkeypatch.setattr("src.console_ui.DataLoader.load_vehicle_profiles", mock_load_vehicle_profile)
-    ConsoleUI.print_vehicle()
+    KonsolenUI.print_vehicle()
     captured = capsys.readouterr()
     assert captured.out == "1. Ford Mustang: Batteriekapazität: 600 kWh, Durchschnittsverbrauch: 20 Wh/km, Reichweite: 600 km, Gewicht: 1700 kg\n"
 
@@ -38,6 +38,6 @@ def test_print_route(monkeypatch, capsys):
         return test_data_route
     
     monkeypatch.setattr("src.console_ui.DataLoader.load_route_profiles", mock_load_route_profile)
-    ConsoleUI.print_route()
+    KonsolenUI.print_route()
     captured = capsys.readouterr()
     assert captured.out == "1. Beispielroute: Startort: Start, Zielort: Ziel, Gesamtdistanz: 300 km, +20 hm, -30 hm, Segmente: Landstraße, 100 km, Durchschnittsgeschwindigkeit: 70 km/h\n"
