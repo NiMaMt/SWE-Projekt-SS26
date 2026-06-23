@@ -64,7 +64,7 @@ classDiagram
         +setzeLadezustand(prozent: float) void
     }
 
-    class KonsolenUI {
+    class ConsoleUI {
         +format_weather_list(list~WeatherProfile~): str
         +print_weather(): void
         +format_vehicle_list(list~VehicleProfile~): str
