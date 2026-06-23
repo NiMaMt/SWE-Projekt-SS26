@@ -84,7 +84,7 @@ class KonsolenUI:
         for nummer, item in enumerate(data, start=1):
             zeilen.append(
                 f"{nummer:<4}"
-                f"{item.typ:<35}"
+                f"{item.name:<35}"
                 f"{item.start:<23}"
                 f"{item.ziel:<23}"
                 f"{item.gesamtdistanz_km:>9} km"

@@ -8,5 +8,7 @@ def main():
     print("===========================================\n\n")
 
 
+KonsolenUI.print_vehicle()
+
 if __name__ == "__main__":
     main()
