@@ -76,10 +76,10 @@ classDiagram
 
     }
 
-    class ReichweitenService {
-        +berechneVerfuegbareEnergie(config: Fahrtkonfiguration) float
-        +berechneEnergiebedarf(config: Fahrtkonfiguration) float
-        +pruefeFahrt(config: Fahrtkonfiguration) Berechnungsergebnis
+    class RangeService {
+        +calculateEnergyAvailable(config: Fahrtkonfiguration) float
+        +calculateEnergyReqired(config: Fahrtkonfiguration) float
+        +checkDrivePossible(config: Fahrtkonfiguration) Berechnungsergebnis
     }
 
     class Berechnungsergebnis {
