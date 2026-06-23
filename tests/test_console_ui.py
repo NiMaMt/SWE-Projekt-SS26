@@ -1,9 +1,9 @@
-from src.console_ui import KonsolenUI
+from src.console_ui import ConsoleUI
 from src.weather_profile import WeatherProfile
 from src.route_profile import RouteProfile, Segment
 from src.vehicle_profile import VehicleProfile
 
-# Test Wetterausgabe in Konsole
+# Test Weather Output in Console
 def test_print_weather(monkeypatch, capsys):
     test_data_weather = [WeatherProfile("Sommertag", 28, 0, 12, 45, "sonnig")]
 
@@ -27,7 +27,7 @@ def test_print_weather(monkeypatch, capsys):
     assert "45.0%" in captured.out
     assert "sonnig" in captured.out
 
-# Test Fahrzeugausgabe in Konsole
+# Test Vehicle Output in Console
 def test_print_vehicle(monkeypatch, capsys):
     test_data_vehicle = [VehicleProfile("Ford Mustang", 600, 20, 600, 1700)]
 
@@ -48,7 +48,7 @@ def test_print_vehicle(monkeypatch, capsys):
     assert "600 km" in captured.out or "600.0 km" in captured.out
     assert "1700 kg" in captured.out or "1700.0 kg" in captured.out
 
-# Test Routenausgabe in Konsole
+# Test Route Output in Console
 def test_print_route(monkeypatch, capsys):
     test_data_segment = [Segment("Landstraße", 100, 70)]
     test_data_route = [

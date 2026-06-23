@@ -1,139 +1,136 @@
 import json
-import os  # os wird für os.path.join benötigt, um Pfade plattformunabhängig zu handhaben.
+import os  # os is needed for os.path.join to handle paths platform-independently.
 
 from src.weather_profile import WeatherProfile
 from src.vehicle_profile import VehicleProfile
 from src.route_profile import RouteProfile, Segment
 
-
 class DataLoader:
     @staticmethod
-    # Verzicht auf self-Teil der Funktion. Damit muss kein Objekt erzeugt werden von der Klasse DataLoader, um auf die Funktionen zuzugreifen. Zugriff jetzt mit DataLoader.load_weather_profiles()
+    # Using @staticmethod decorator. This allows accessing the function without instantiating a DataLoader object, e.g., DataLoader.load_weather_profiles().
     def load_weather_profiles():
         try:
             file_path = os.path.join(os.path.dirname(__file__), "weatherprofile.json")
-            # __file__ ist eine Python-Variable und gibt den Pfad der aktuell ausgeführten Python-Datei zurück.
-            # os.path.dirname() gibt das Verzeichnis zurück und entfernt den Dateinamen aus dem Pfad
-            # os.path.join() fügt die zweite Variable in das Verzeichnis ein
-            with open(file_path, "r", encoding="utf-8") as daten_wetter:
-                daten = json.load(daten_wetter)
+            # __file__ is a Python variable that returns the path of the currently executed Python file.
+            # os.path.dirname() returns the directory and removes the filename from the path.
+            # os.path.join() combines the directory with the filename.
+            with open(file_path, "r", encoding="utf-8") as data_weather:
+                data = json.load(data_weather)
 
+            weather_profiles = []
+            # This list will store all created WeatherProfile objects.
 
-            wettersituation = []
-            # In dieser Liste werden später alle erzeugten WeatherProfile-Objekte gespeichert.
-
-            for eintrag in daten["wetterprofile"]:
-                # daten["wetterprofile"] greift auf die Liste mit allen Wettereinträgen aus der JSON-Datei zu.
-                # Die Schleife geht jeden einzelnen Eintrag nacheinander durch.
-                wetter = WeatherProfile(
-                    eintrag["name"],
-                    eintrag["temperatur_c"],
-                    eintrag["regen_mm_pro_h"],
-                    eintrag["windgeschwindigkeit_kmh"],
-                    eintrag["luftfeuchtigkeit_prozent"],
-                    eintrag["wetterzustand"]
+            for entry in data["weatherprofiles"]:
+                # data["weatherprofiles"] accesses the list of all weather entries from the JSON file.
+                # The loop iterates through each entry.
+                weather = WeatherProfile(
+                    entry["name"],
+                    entry["temperature_c"],
+                    entry["rain_mm_per_h"],
+                    entry["wind_speed_kmh"],
+                    entry["humidity_percent"],
+                    entry["weather_condition"]
                 )
-                 # Aus den Werten des aktuellen JSON-Eintrags wird ein WeatherProfile-Objekt erzeugt.
+                # A WeatherProfile object is created from the values of the current JSON entry.
 
-                wettersituation.append(wetter)
-                # Das neu erzeugte WeatherProfile-Objekt wird zur Liste hinzugefügt.
+                weather_profiles.append(weather)
+                # The newly created WeatherProfile object is added to the list.
 
-            return wettersituation
-        # Rückgabe einer kompletten Liste mit allen WeatherProfile-Objekten. Sehr praktisch für den Zugriff auf die Objekte
+            return weather_profiles
+        # Returns a complete list of all WeatherProfile objects, very practical for accessing them.
         
         except FileNotFoundError:
-            print("Fehler: Die angegebene Datei 'weatherprofile.json' wurde nicht gefunden.")
+            print("Error: The specified file 'weatherprofile.json' was not found.")
             return None
         except PermissionError:
-            print("Fehler: Keine Berechtigung, um die Datei 'weatherprofile.json' zu lesen.")
+            print("Error: Permission denied to read the file 'weatherprofile.json'.")
             return None
         except json.JSONDecodeError:
-            print("Fehler: Die Datei 'weatherprofile.json' enthält ungültiges JSON.")
+            print("Error: The file 'weatherprofile.json' contains invalid JSON.")
             return None
         except IOError as e:
-            print(f"Ein-/Ausgabe-Fehler beim Laden von 'weatherprofile.json': {e}")
+            print(f"I/O error while loading 'weatherprofile.json': {e}")
             return None
 
     @staticmethod
     def load_vehicle_profiles():
         try:
             file_path = os.path.join(os.path.dirname(__file__), "vehicleprofile.json")
-            with open(file_path, "r", encoding="utf-8") as daten_fahrzeug:
-                daten = json.load(daten_fahrzeug)
+            with open(file_path, "r", encoding="utf-8") as data_vehicle:
+                data = json.load(data_vehicle)
 
-            fahrzeuge = []
+            vehicles = []
 
-            for eintrag in daten["fahrzeugprofile"]:
-                fahrzeug = VehicleProfile(
-                    eintrag["name"],
-                    eintrag["batteriekapazitaet_kwh"],
-                    eintrag["durchschnittlicher_basisverbrauch_wh_km"],
-                    eintrag["reichweite_km"],
-                    eintrag["gewicht_kg"]
+            for entry in data["vehicleprofiles"]:
+                current_vehicle = VehicleProfile(
+                    entry["name"],
+                    entry["battery_capacity_kwh"],
+                    entry["average_consumption_wh_km"],
+                    entry["range_km"],
+                    entry["weight_kg"]
                 )
-                fahrzeuge.append(fahrzeug)
+                vehicles.append(current_vehicle)
 
-            return fahrzeuge
+            return vehicles
 
         except FileNotFoundError:
-            print("Fehler: Die angegebene Datei 'vehicleprofile.json' wurde nicht gefunden.")
+            print("Error: The specified file 'vehicleprofile.json' was not found.")
             return None
         except PermissionError:
-            print("Fehler: Keine Berechtigung, um die Datei 'vehicleprofile.json' zu lesen.")
+            print("Error: Permission denied to read the file 'vehicleprofile.json'.")
             return None
         except json.JSONDecodeError:
-            print("Fehler: Die Datei 'vehicleprofile.json' enthält ungültiges JSON.")
+            print("Error: The file 'vehicleprofile.json' contains invalid JSON.")
             return None
         except IOError as e:
-            print(f"Ein-/Ausgabe-Fehler beim Laden von 'vehicleprofile.json': {e}")
+            print(f"I/O error while loading 'vehicleprofile.json': {e}")
             return None
 
     @staticmethod
     def load_route_profiles():
         try:
             file_path = os.path.join(os.path.dirname(__file__), "routeprofile.json")
-            with open(file_path, "r", encoding="utf-8") as daten_strecke:
-                daten = json.load(daten_strecke)
+            with open(file_path, "r", encoding="utf-8") as data_route:
+                data = json.load(data_route)
 
-            streckenprofile = []
+            route_profiles = []
 
-            for eintrag in daten["streckenprofile"]:
+            for route_data in data["routeprofiles"]:
 
-                segmente_liste = []
-                for segment_eintrag in eintrag["segmente"]:
+                segments_list = []
+                for segment_input in route_data["segments"]:
 
                     segment = Segment(
-                    segment_eintrag["typ"],
-                    segment_eintrag["distanz_km"],
-                    segment_eintrag["durchschnittsgeschwindigkeit_kmh"]
-                )
-                    segmente_liste.append(segment)
-                    # Da Segmente in der JSON eine eigene kleine Liste sind, habe ich das einfach mit angehängt. Somit hat jedes Objekt eine Segmente-Liste
+                        segment_input["type"],
+                        segment_input["distance_km"],
+                        segment_input["average_speed_kmh"]
+                    )
+                    segments_list.append(segment)
+                    # Since segments are a nested list within the JSON, they are appended directly. Thus, each route object has its own list of segments.
 
                 route = RouteProfile(
-                eintrag["name"],
-                eintrag["start"],
-                eintrag["ziel"],
-                eintrag["gesamtdistanz_km"],
-                eintrag["hoehenmeter_bergauf"],
-                eintrag["hoehenmeter_bergab"],
-                segmente_liste
-            )
+                    route_data["name"],
+                    route_data["start"],
+                    route_data["destination"],
+                    route_data["distance_km"],
+                    route_data["altitude_ascent"],
+                    route_data["altitude_descent"],
+                    segments_list
+                )
                 
-                streckenprofile.append(route)
+                route_profiles.append(route)
 
-            return streckenprofile
+            return route_profiles
         
-
         except FileNotFoundError:
-            print("Fehler: Die angegebene Datei 'routeprofile.json' wurde nicht gefunden.")
+            print("Error: The specified file 'routeprofile.json' was not found.")
             return None
         except PermissionError:
-            print("Fehler: Keine Berechtigung, um die Datei 'routeprofile.json' zu lesen.")
+            print("Error: Permission denied to read the file 'routeprofile.json'.")
             return None
         except json.JSONDecodeError:
-            print("Fehler: Die Datei 'routeprofile.json' enthält ungültiges JSON.")
+            print("Error: The file 'routeprofile.json' contains invalid JSON.")
             return None
         except IOError as e:
-            print(f"Ein-/Ausgabe-Fehler beim Laden von 'routeprofile.json': {e}")
+            print(f"I/O error while loading 'routeprofile.json': {e}")
             return None
