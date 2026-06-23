@@ -1,4 +1,4 @@
-from src.console_ui import KonsolenUI
+from src.console_ui import ConsoleUI
 from src.weather_profile import WeatherProfile
 from src.route_profile import RouteProfile, Segment
 from src.vehicle_profile import VehicleProfile

@@ -1,16 +1,16 @@
 class VehicleProfile:
-    def __init__(self, name, batteriekapazitaet_kwh, durchschnittlicher_basisverbrauch_wh_km, reichweite_km, gewicht_kg):
+    def __init__(self, name, capacity_kwh, average_consumption_wh_km, range_km, weight_kg):
         self.name = name
-        self.batteriekapazitaet_kwh = batteriekapazitaet_kwh
-        self.durchschnittlicher_basisverbrauch_wh_km = durchschnittlicher_basisverbrauch_wh_km
-        self.reichweite_km = reichweite_km
-        self.gewicht_kg = gewicht_kg
+        self.capacity_kwh = capacity_kwh
+        self.average_consumption_wh_km = average_consumption_wh_km
+        self.range_km = range_km
+        self.weight_kg = weight_kg
 
     def __str__(self):
         return (
             f"{self.name}: "
-            f"Batteriekapazität: {self.batteriekapazitaet_kwh} kWh, "
-            f"Durchschnittsverbrauch: {self.durchschnittlicher_basisverbrauch_wh_km} Wh/km, "
-            f"Reichweite: {self.reichweite_km} km, "
-            f"Gewicht: {self.gewicht_kg} kg"
+            f"Batteriekapazität: {self.capacity_kwh} kWh, "
+            f"Durchschnittsverbrauch: {self.average_consumption_wh_km} Wh/km, "
+            f"Reichweite: {self.range_km} km, "
+            f"Gewicht: {self.weight_kg} kg"
         )

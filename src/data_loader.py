@@ -15,30 +15,30 @@ class DataLoader:
             # __file__ ist eine Python-Variable und gibt den Pfad der aktuell ausgeführten Python-Datei zurück.
             # os.path.dirname() gibt das Verzeichnis zurück und entfernt den Dateinamen aus dem Pfad
             # os.path.join() fügt die zweite Variable in das Verzeichnis ein
-            with open(file_path, "r", encoding="utf-8") as daten_wetter:
-                daten = json.load(daten_wetter)
+            with open(file_path, "r", encoding="utf-8") as data_weather:
+                data = json.load(data_weather)
 
 
-            wettersituation = []
+            weather_situation = []
             # In dieser Liste werden später alle erzeugten WeatherProfile-Objekte gespeichert.
 
-            for eintrag in daten["wetterprofile"]:
-                # daten["wetterprofile"] greift auf die Liste mit allen Wettereinträgen aus der JSON-Datei zu.
+            for entry in data["weatherprofiles"]:
+                # data["weatherprofiles"] greift auf die Liste mit allen Wettereinträgen aus der JSON-Datei zu.
                 # Die Schleife geht jeden einzelnen Eintrag nacheinander durch.
-                wetter = WeatherProfile(
-                    eintrag["name"],
-                    eintrag["temperatur_c"],
-                    eintrag["regen_mm_pro_h"],
-                    eintrag["windgeschwindigkeit_kmh"],
-                    eintrag["luftfeuchtigkeit_prozent"],
-                    eintrag["wetterzustand"]
+                weather = WeatherProfile(
+                    entry["name"],
+                    entry["temperature_c"],
+                    entry["rain_mm_per_h"],
+                    entry["wind_speed_kmh"],
+                    entry["humidity_percent"],
+                    entry["weather_condition"]
                 )
                  # Aus den Werten des aktuellen JSON-Eintrags wird ein WeatherProfile-Objekt erzeugt.
 
-                wettersituation.append(wetter)
+                weather_situation.append(weather)
                 # Das neu erzeugte WeatherProfile-Objekt wird zur Liste hinzugefügt.
 
-            return wettersituation
+            return weather_situation
         # Rückgabe einer kompletten Liste mit allen WeatherProfile-Objekten. Sehr praktisch für den Zugriff auf die Objekte
         
         except FileNotFoundError:
@@ -58,22 +58,22 @@ class DataLoader:
     def load_vehicle_profiles():
         try:
             file_path = os.path.join(os.path.dirname(__file__), "vehicleprofile.json")
-            with open(file_path, "r", encoding="utf-8") as daten_fahrzeug:
-                daten = json.load(daten_fahrzeug)
+            with open(file_path, "r", encoding="utf-8") as data_vehicles:
+                data = json.load(data_vehicles)
 
-            fahrzeuge = []
+            vehicles = []
 
-            for eintrag in daten["fahrzeugprofile"]:
-                fahrzeug = VehicleProfile(
-                    eintrag["name"],
-                    eintrag["batteriekapazitaet_kwh"],
-                    eintrag["durchschnittlicher_basisverbrauch_wh_km"],
-                    eintrag["reichweite_km"],
-                    eintrag["gewicht_kg"]
+            for entry in data["vehicleprofiles"]:
+                vehicle = VehicleProfile(
+                    entry["name"],
+                    entry["capacity_kwh"],
+                    entry["average_consumption_wh_km"],
+                    entry["range_km"],
+                    entry["weight_kg"]
                 )
-                fahrzeuge.append(fahrzeug)
+                vehicles.append(vehicle)
 
-            return fahrzeuge
+            return vehicles
 
         except FileNotFoundError:
             print("Fehler: Die angegebene Datei 'vehicleprofile.json' wurde nicht gefunden.")
@@ -92,37 +92,37 @@ class DataLoader:
     def load_route_profiles():
         try:
             file_path = os.path.join(os.path.dirname(__file__), "routeprofile.json")
-            with open(file_path, "r", encoding="utf-8") as daten_strecke:
-                daten = json.load(daten_strecke)
+            with open(file_path, "r", encoding="utf-8") as data_strecke:
+                data = json.load(data_strecke)
 
-            streckenprofile = []
+            routeprofiles = []
 
-            for eintrag in daten["streckenprofile"]:
+            for entry in data["routeprofiles"]:
 
-                segmente_liste = []
-                for segment_eintrag in eintrag["segmente"]:
+                segments_list = []
+                for segment_entry in entry["segments"]:
 
                     segment = Segment(
-                    segment_eintrag["typ"],
-                    segment_eintrag["distanz_km"],
-                    segment_eintrag["durchschnittsgeschwindigkeit_kmh"]
+                    segment_entry["type"],
+                    segment_entry["distance_km"],
+                    segment_entry["average_speed_kmh"]
                 )
-                    segmente_liste.append(segment)
+                    segments_list.append(segment)
                     # Da Segmente in der JSON eine eigene kleine Liste sind, habe ich das einfach mit angehängt. Somit hat jedes Objekt eine Segmente-Liste
 
                 route = RouteProfile(
-                eintrag["name"],
-                eintrag["start"],
-                eintrag["ziel"],
-                eintrag["gesamtdistanz_km"],
-                eintrag["hoehenmeter_bergauf"],
-                eintrag["hoehenmeter_bergab"],
-                segmente_liste
+                entry["name"],
+                entry["start"],
+                entry["destination"],
+                entry["distance_km"],
+                entry["altitude_ascent"],
+                entry["altitude_descent"],
+                segments_list
             )
                 
-                streckenprofile.append(route)
+                routeprofiles.append(route)
 
-            return streckenprofile
+            return routeprofiles
         
 
         except FileNotFoundError:
