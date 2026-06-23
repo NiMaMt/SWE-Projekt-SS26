@@ -1,68 +1,68 @@
 {
-  "weatherprofiles": [
-    {
-      "name": "Sunny Summer Day",
-      "temperature_c": 28,
-      "rain_mm_per_h": 0,
-      "wind_speed_kmh": 12,
-      "humidity_percent": 45,
-      "weather_condition": "sunny"
-    },
-    {
-      "name": "Light Rain",
-      "temperature_c": 17,
-      "rain_mm_per_h": 2.5,
-      "wind_speed_kmh": 20,
-      "humidity_percent": 78,
-      "weather_condition": "rainy"
-    },
-    {
-      "name": "Heavy Rain and Wind",
-      "temperature_c": 11,
-      "rain_mm_per_h": 9.8,
-      "wind_speed_kmh": 55,
-      "humidity_percent": 92,
-      "weather_condition": "storm"
-    },
-    {
-      "name": "Winter Conditions",
-      "temperature_c": -3,
-      "rain_mm_per_h": 1.2,
-      "wind_speed_kmh": 25,
-      "humidity_percent": 85,
-      "weather_condition": "snow"
-    },
-    {
-      "name": "Cloudy Autumn Day",
-      "temperature_c": 9,
-      "rain_mm_per_h": 0.4,
-      "wind_speed_kmh": 18,
-      "humidity_percent": 70,
-      "weather_condition": "cloudy"
-    },
-    {
-      "name": "Foggy Morning",
-      "temperature_c": 6,
-      "rain_mm_per_h": 0,
-      "wind_speed_kmh": 5,
-      "humidity_percent": 96,
-      "weather_condition": "fog"
-    },
-    {
-      "name": "Hot Summer Day",
-      "temperature_c": 34,
-      "rain_mm_per_h": 0,
-      "wind_speed_kmh": 10,
-      "humidity_percent": 35,
-      "weather_condition": "hot"
-    },
-    {
-      "name": "Thunderstorm",
-      "temperature_c": 21,
-      "rain_mm_per_h": 14.5,
-      "wind_speed_kmh": 70,
-      "humidity_percent": 88,
-      "weather_condition": "thunderstorm"
-    }
-  ]
+      "weatherprofiles": [
+            {
+                  "name": "Sonniger Sommertag",
+                  "temperature_c": 28,
+                  "rain_mm_per_h": 0,
+                  "wind_speed_kmh": 12,
+                  "humidity_percent": 45,
+                  "weather_condition": "sonnig"
+            },
+            {
+                  "name": "Leichter Regen",
+                  "temperature_c": 17,
+                  "rain_mm_per_h": 2.5,
+                  "wind_speed_kmh": 20,
+                  "humidity_percent": 78,
+                  "weather_condition": "regnerisch"
+            },
+            {
+                  "name": "Starker Regen und Wind",
+                  "temperature_c": 11,
+                  "rain_mm_per_h": 9.8,
+                  "wind_speed_kmh": 55,
+                  "humidity_percent": 92,
+                  "weather_condition": "sturm"
+            },
+            {
+                  "name": "Winterliche Bedingungen",
+                  "temperature_c": -3,
+                  "rain_mm_per_h": 1.2,
+                  "wind_speed_kmh": 25,
+                  "humidity_percent": 85,
+                  "weather_condition": "schnee"
+            },
+            {
+                  "name": "Bewölkter Herbsttag",
+                  "temperature_c": 9,
+                  "rain_mm_per_h": 0.4,
+                  "wind_speed_kmh": 18,
+                  "humidity_percent": 70,
+                  "weather_condition": "bewölkt"
+            },
+            {
+                  "name": "Nebliger Morgen",
+                  "temperature_c": 6,
+                  "rain_mm_per_h": 0,
+                  "wind_speed_kmh": 5,
+                  "humidity_percent": 96,
+                  "weather_condition": "nebel"
+            },
+            {
+                  "name": "Heißer Sommertag",
+                  "temperature_c": 34,
+                  "rain_mm_per_h": 0,
+                  "wind_speed_kmh": 10,
+                  "humidity_percent": 35,
+                  "weather_condition": "heiß"
+            },
+            {
+                  "name": "Gewitter",
+                  "temperature_c": 21,
+                  "rain_mm_per_h": 14.5,
+                  "wind_speed_kmh": 70,
+                  "humidity_percent": 88,
+                  "weather_condition": "gewitter"
+            }
+      ]
 }

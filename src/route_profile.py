@@ -8,7 +8,7 @@ class Segment:
         return (
             f"{self.type}, "
             f"{self.distance_km} km, "
-            f"Average speed: {self.average_speed_kmh} km/h"
+            f"Durchschnittsgeschwindigkeit: {self.average_speed_kmh} km/h"
         )
 
 class RouteProfile:
@@ -22,15 +22,15 @@ class RouteProfile:
         self.segments = segments
 
     def __str__(self):
-        # Converts each segment to a string for output and joins them with ", ";
-        # The values in self.segments remain unchanged, e.g., 100 still remains a numerical value in the Segment object.
+        # Wandelt jedes Segment nur für die Ausgabe in einen String um und fügt alle mit ", " zusammen;
+        # Die Werte in self.segmente bleiben unverändert, z. B. bleibt 100 weiterhin ein Zahlenwert im Segment-Objekt
         segments_text = ", ".join(str(segment) for segment in self.segments)
         return (
             f"{self.name}: "
-            f"Starting point: {self.start}, "
-            f"Destination: {self.destination}, "
-            f"Full Distance: {self.distance_km} km, "
+            f"Startort: {self.start}, "
+            f"Zielort: {self.destination}, "
+            f"Gesamtdistanz: {self.distance_km} km, "
             f"{self.altitude_ascent} hm, "
             f"{self.altitude_descent} hm, "
-            f"Segments: {segments_text}"
+            f"Segmente: {segments_text}"
         )

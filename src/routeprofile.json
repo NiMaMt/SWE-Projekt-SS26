@@ -9,17 +9,17 @@
       "altitude_descent": 95,
       "segments": [
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 8,
           "average_speed_kmh": 35
         },
         {
-          "type": "Country Road",
+          "type": "Landstraße",
           "distance_km": 5,
           "average_speed_kmh": 70
         },
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 4,
           "average_speed_kmh": 30
         }
@@ -34,17 +34,17 @@
       "altitude_descent": 380,
       "segments": [
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 12,
           "average_speed_kmh": 40
         },
         {
-          "type": "Country Road",
+          "type": "Landstraße",
           "distance_km": 38,
           "average_speed_kmh": 85
         },
         {
-          "type": "Highway",
+          "type": "Autobahn",
           "distance_km": 45,
           "average_speed_kmh": 120
         }
@@ -53,23 +53,23 @@
     {
       "name": "Stuttgart -> Munich",
       "start": "Stuttgart",
-      "destination": "Munich",
+      "destination": "München",
       "distance_km": 220,
       "altitude_ascent": 760,
       "altitude_descent": 690,
       "segments": [
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 20,
           "average_speed_kmh": 35
         },
         {
-          "type": "Highway",
+          "type": "Autobahn",
           "distance_km": 180,
           "average_speed_kmh": 130
         },
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 20,
           "average_speed_kmh": 40
         }
@@ -84,17 +84,17 @@
       "altitude_descent": 710,
       "segments": [
         {
-          "type": "Country Road",
+          "type": "Landstraße",
           "distance_km": 55,
           "average_speed_kmh": 75
         },
         {
-          "type": "Highway",
+          "type": "Autobahn",
           "distance_km": 25,
           "average_speed_kmh": 120
         },
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 10,
           "average_speed_kmh": 30
         }
@@ -109,17 +109,17 @@
       "altitude_descent": 140,
       "segments": [
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 10,
           "average_speed_kmh": 35
         },
         {
-          "type": "Highway",
+          "type": "Autobahn",
           "distance_km": 20,
           "average_speed_kmh": 100
         },
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 5,
           "average_speed_kmh": 30
         }
@@ -128,23 +128,23 @@
     {
       "name": "Frankfurt am Main -> Cologne",
       "start": "Frankfurt am Main",
-      "destination": "Cologne",
+      "destination": "Köln",
       "distance_km": 190,
       "altitude_ascent": 680,
       "altitude_descent": 640,
       "segments": [
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 15,
           "average_speed_kmh": 40
         },
         {
-          "type": "Highway",
+          "type": "Autobahn",
           "distance_km": 160,
           "average_speed_kmh": 125
         },
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 15,
           "average_speed_kmh": 35
         }
@@ -153,48 +153,48 @@
     {
       "name": "Berlin -> Hanover",
       "start": "Berlin",
-      "destination": "Hanover",
+      "destination": "Hannover",
       "distance_km": 285,
       "altitude_ascent": 320,
       "altitude_descent": 300,
       "segments": [
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 25,
           "average_speed_kmh": 35
         },
         {
-          "type": "Highway",
+          "type": "Autobahn",
           "distance_km": 240,
           "average_speed_kmh": 135
         },
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 20,
           "average_speed_kmh": 40
         }
       ]
     },
     {
-      "name": "Hanover -> Hamburg",
-      "start": "Hanover",
+      "name": "Hannover -> Hamburg",
+      "start": "Hannover",
       "destination": "Hamburg",
       "distance_km": 155,
       "altitude_ascent": 180,
       "altitude_descent": 170,
       "segments": [
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 15,
           "average_speed_kmh": 35
         },
         {
-          "type": "Highway",
+          "type": "Autobahn",
           "distance_km": 130,
           "average_speed_kmh": 125
         },
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 10,
           "average_speed_kmh": 30
         }
@@ -209,42 +209,42 @@
       "altitude_descent": 1180,
       "segments": [
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 20,
           "average_speed_kmh": 35
         },
         {
-          "type": "Highway",
+          "type": "Autobahn",
           "distance_km": 590,
           "average_speed_kmh": 130
         },
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 25,
           "average_speed_kmh": 30
         }
       ]
     },
     {
-      "name": "Munich -> Hamburg",
-      "start": "Munich",
+      "name": "München -> Hamburg",
+      "start": "München",
       "destination": "Hamburg",
       "distance_km": 780,
       "altitude_ascent": 1480,
       "altitude_descent": 1420,
       "segments": [
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 25,
           "average_speed_kmh": 35
         },
         {
-          "type": "Highway",
+          "type": "Autobahn",
           "distance_km": 730,
           "average_speed_kmh": 135
         },
         {
-          "type": "City",
+          "type": "Stadt",
           "distance_km": 25,
           "average_speed_kmh": 30
         }

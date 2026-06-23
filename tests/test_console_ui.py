@@ -15,7 +15,7 @@ def test_print_weather(monkeypatch, capsys):
         mock_load_weather_profile
     )
 
-    KonsolenUI.print_weather()
+    ConsoleUI.print_weather()
     captured = capsys.readouterr()
 
     assert "Nr." in captured.out
@@ -27,7 +27,7 @@ def test_print_weather(monkeypatch, capsys):
     assert "45.0%" in captured.out
     assert "sonnig" in captured.out
 
-# Test Vehicle Output in Console
+# Test Fahrzeugausgabe in Konsole
 def test_print_vehicle(monkeypatch, capsys):
     test_data_vehicle = [VehicleProfile("Ford Mustang", 600, 20, 600, 1700)]
 
@@ -39,7 +39,7 @@ def test_print_vehicle(monkeypatch, capsys):
         mock_load_vehicle_profile
     )
 
-    KonsolenUI.print_vehicle()
+    ConsoleUI.print_vehicle()
     captured = capsys.readouterr()
 
     assert "Ford Mustang" in captured.out
@@ -63,7 +63,7 @@ def test_print_route(monkeypatch, capsys):
         mock_load_route_profile
     )
 
-    KonsolenUI.print_route()
+    ConsoleUI.print_route()
     captured = capsys.readouterr()
 
     assert "Beispielroute" in captured.out

@@ -14,5 +14,5 @@ class WeatherProfile:
             f"{self.rain_mm_per_h} mm/h, "
             f"{self.wind_speed_kmh} km/h, "
             f"{self.humidity_percent}%, "
-            f"Condition: {self.weather_condition}"
+            f"Zustand: {self.weather_condition}"
         )
