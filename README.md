@@ -13,7 +13,8 @@ The application is designed to read various electric vehicle, route, and weather
 
 ## Prüfung ob Fahrt möglich ist
 
-`RangeService.checkDrivePossible`  
+`RangeService.checkDrivePossible`
+
 Input: `energyAvailable`, `energyReqired`  
-Output: `DrivePossible`(true / false)  
+Output: `DrivePossible` (true / false)  
 Eine simple Entscheidungslogik vergleicht die verfügbare Energie und die benötigte Energie und gibt aus, ob die Fahrt so möglich ist oder nicht.
