@@ -48,9 +48,9 @@ classDiagram
     }
 
     class DataLoader {
-        +load_weather_profiles(): List~WeatherProfile~
-        +load_vehicle_profiles(): List~VehicleProfile~
-        +load_route_profiles(): List~RouteProfile~
+        +load_weather_profiles() List~WeatherProfile~
+        +load_vehicle_profiles() List~VehicleProfile~
+        +load_route_profiles() List~RouteProfile~
     }
 
     class TripConfiguration {
@@ -58,27 +58,27 @@ classDiagram
         +route: RouteProfile
         +weather_profile: WeatherProfile
         +capacity_percent: float
-        +select_vehicle(vehicle: VehicleProfile): void
-        +select_route(route: RouteProfile): void
-        +select_weather(weather_profile: WeatherProfile): void
-        +set_capacity_percent(capacity_percent: float): void
+        +select_vehicle(vehicle: VehicleProfile) void
+        +select_route(route: RouteProfile) void
+        +select_weather(weather_profile: WeatherProfile) void
+        +set_capacity_percent(capacity_percent: float) void
     }
 
     class ConsoleUI {
-        +format_weather_list(weather_profiles: List~WeatherProfile~): str
-        +print_weather(weather_profiles: List~WeatherProfile~): void
-        +format_vehicle_list(vehicle_profiles: List~VehicleProfile~): str
-        +print_vehicle(vehicle_profiles: List~VehicleProfile~): void
-        +format_route_list(route_profiles: List~RouteProfile~): str
-        +print_route(route_profiles: List~RouteProfile~): void
-        +format_segment_list(segments: List~Segment~): str
-        +print_segment(segments: List~Segment~): void
+        +format_weather_list(weather_profiles: List~WeatherProfile~) str
+        +print_weather(weather_profiles: List~WeatherProfile~) void
+        +format_vehicle_list(vehicle_profiles: List~VehicleProfile~) str
+        +print_vehicle(vehicle_profiles: List~VehicleProfile~) void
+        +format_route_list(route_profiles: List~RouteProfile~) str
+        +print_route(route_profiles: List~RouteProfile~) void
+        +format_segment_list(segments: List~Segment~) str
+        +print_segment(segments: List~Segment~) void
     }
 
     class RangeService {
-        +calculate_energy_available(config: TripConfiguration): float
-        +calculate_energy_required(config: TripConfiguration): float
-        +check_drive_possible(config: TripConfiguration): CheckTripPossibility
+        +calculate_energy_available(config: TripConfiguration) float
+        +calculate_energy_required(config: TripConfiguration) float
+        +check_drive_possible(config: TripConfiguration) CheckTripPossibility
     }
 
     class CheckTripPossibility {
