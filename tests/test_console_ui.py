@@ -4,18 +4,10 @@ from src.route_profile import RouteProfile, Segment
 from src.vehicle_profile import VehicleProfile
 
 # Test Weather Output in Console
-def test_print_weather(monkeypatch, capsys):
+def test_print_weather(capsys):
     test_data_weather = [WeatherProfile("Sommertag", 28, 0, 12, 45, "sonnig")]
 
-    def mock_load_weather_profile():
-        return test_data_weather
-
-    monkeypatch.setattr(
-        "src.console_ui.DataLoader.load_weather_profiles",
-        mock_load_weather_profile
-    )
-
-    ConsoleUI.print_weather()
+    ConsoleUI.print_weather(test_data_weather)
     captured = capsys.readouterr()
 
     assert "Nr." in captured.out
@@ -28,18 +20,10 @@ def test_print_weather(monkeypatch, capsys):
     assert "sonnig" in captured.out
 
 # Test Fahrzeugausgabe in Konsole
-def test_print_vehicle(monkeypatch, capsys):
+def test_print_vehicle(capsys):
     test_data_vehicle = [VehicleProfile("Ford Mustang", 600, 20, 600, 1700)]
 
-    def mock_load_vehicle_profile():
-        return test_data_vehicle
-
-    monkeypatch.setattr(
-        "src.console_ui.DataLoader.load_vehicle_profiles",
-        mock_load_vehicle_profile
-    )
-
-    ConsoleUI.print_vehicle()
+    ConsoleUI.print_vehicle(test_data_vehicle)
     captured = capsys.readouterr()
 
     assert "Ford Mustang" in captured.out
@@ -49,21 +33,13 @@ def test_print_vehicle(monkeypatch, capsys):
     assert "1700 kg" in captured.out or "1700.0 kg" in captured.out
 
 # Test Route Output in Console
-def test_print_route(monkeypatch, capsys):
+def test_print_route(capsys):
     test_data_segment = [Segment("Landstraße", 100, 70)]
     test_data_route = [
         RouteProfile("Beispielroute", "Start", "Ziel", 300, 20, 30, test_data_segment)
     ]
 
-    def mock_load_route_profile():
-        return test_data_route
-
-    monkeypatch.setattr(
-        "src.console_ui.DataLoader.load_route_profiles",
-        mock_load_route_profile
-    )
-
-    ConsoleUI.print_route()
+    ConsoleUI.print_route(test_data_route)
     captured = capsys.readouterr()
 
     assert "Beispielroute" in captured.out
