@@ -1,3 +1,6 @@
 class rangeService:
     def checkDrivePossible(energyAvailable, energyReqired):
-        return False
+        if(energyAvailable >= energyReqired):
+            return True
+        else:
+            return False
