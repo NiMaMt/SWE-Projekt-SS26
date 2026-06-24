@@ -1,5 +1,7 @@
 from src.rangeService import rangeService
 from src.vehicle_profile import VehicleProfile
+from src.weather_profile import WeatherProfile
+from src.route_profile import RouteProfile
 
 def test_rangeService_checkDrivePossible():
     # energyAvailable < energyReqired
@@ -32,3 +34,6 @@ def test_rangeService_calculateEnergyAvailable():
     # erwartete Rückgabe: energyAvailable = 85kwh * 1 = 85
     energyAvailable = rangeService.calculateEnergyAvailable(testVehicle1, 1)
     assert(energyAvailable == 85)
+
+def test_rangeService_calculateEnergyRequired():
+    assert(True)
