@@ -5,7 +5,9 @@ The application is designed to read various electric vehicle, route, and weather
 ## Berechnung der verbleibenden Reichweite eines Autos
 
 `RangeService.calculateEnergyAvailable`
-
+Input: Objekt der Klasse `VehicleProfile`, `percentageEnergyLeft`  
+Output: verbleibende Energie in kwh  
+Berechnung: maximale Energie der Fahrzeugbatterie * Ladezustand
 
 ## Berechnung der benötigten Energie
 
@@ -16,5 +18,5 @@ The application is designed to read various electric vehicle, route, and weather
 `RangeService.checkDrivePossible`
 
 Input: `energyAvailable`, `energyReqired`  
-Output: `DrivePossible` (true / false)  
+Output: true / false
 Eine simple Entscheidungslogik vergleicht die verfügbare Energie und die benötigte Energie und gibt aus, ob die Fahrt so möglich ist oder nicht.
