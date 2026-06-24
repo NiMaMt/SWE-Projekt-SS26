@@ -1,19 +1,17 @@
-from src.data_loader import DataLoader
-
-
 class ConsoleUI:
 
     @staticmethod
     def format_weather_list(data):
         header = (
-        f"{'Nr.':<4}"
-        f"{'Name':<30}"
-        f"{'Temp.':>8}"
-        f"{'Rain':>12}"
-        f"{'Wind':>12}"
-        f"{'Humidity.':>10}"
-        f"   Condition")
-        
+            f"{'Nr.':<4}"
+            f"{'Name':<30}"
+            f"{'Temp.':>8}"
+            f"{'Rain':>12}"
+            f"{'Wind':>12}"
+            f"{'Humidity':>10}"
+            f"   Condition"
+        )
+
         separation_line = "-" * len(header)
         rows = [header, separation_line]
 
@@ -31,9 +29,8 @@ class ConsoleUI:
         return "\n".join(rows)
 
     @staticmethod
-    def print_weather():
-        data_weather = DataLoader.load_weather_profiles()
-        print(ConsoleUI.format_weather_list(data_weather))
+    def print_weather(data):
+        print(ConsoleUI.format_weather_list(data))
 
     @staticmethod
     def format_vehicle_list(data):
@@ -56,15 +53,14 @@ class ConsoleUI:
                 f"{item.capacity_kwh:>8.1f} kWh"
                 f"{item.average_consumption_wh_km:>10.1f} Wh/km"
                 f"{item.range_km:>10.1f} km"
-                f" {item.weight_kg:>8.1f} kg"
+                f"{item.weight_kg:>10.1f} kg"
             )
 
         return "\n".join(rows)
 
     @staticmethod
-    def print_vehicle():
-        data_vehicles = DataLoader.load_vehicle_profiles()
-        print(ConsoleUI.format_vehicle_list(data_vehicles))
+    def print_vehicle(data):
+        print(ConsoleUI.format_vehicle_list(data))
 
     @staticmethod
     def format_route_list(data):
@@ -95,17 +91,16 @@ class ConsoleUI:
         return "\n".join(rows)
 
     @staticmethod
-    def print_route():
-        data_routes = DataLoader.load_route_profiles()
-        print(ConsoleUI.format_route_list(data_routes))
+    def print_route(data):
+        print(ConsoleUI.format_route_list(data))
 
     @staticmethod
     def format_segment_list(data):
         header = (
             f"{'Nr.':<4}"
-            f"{'Type of Route':<12}"
+            f"{'Type of Route':<18}"
             f"{'Length':<12}"
-            f"{'Average speed':<4}"
+            f"{'Average speed':<15}"
         )
 
         separation_line = "-" * len(header)
@@ -114,14 +109,13 @@ class ConsoleUI:
         for nummer, item in enumerate(data, start=1):
             rows.append(
                 f"{nummer:<4}"
-                f"{item.type:<12}"
-                f"{f'{item.distance_km} km' :<12}"
-                f"{f'{item.average_speed_kmh} km/h':<4}"
+                f"{item.type:<18}"
+                f"{f'{item.distance_km} km':<12}"
+                f"{f'{item.average_speed_kmh} km/h':<15}"
             )
 
         return "\n".join(rows)
-    
-    # Achtung. Hier Objekt von RoutenProfil übergeben
+
     @staticmethod
     def print_segment(route):
         print(ConsoleUI.format_segment_list(route.segments))
