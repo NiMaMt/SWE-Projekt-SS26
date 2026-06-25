@@ -58,9 +58,9 @@ classDiagram
         +route: RouteProfile
         +weather_profile: WeatherProfile
         +capacity_percent: float
-        +select_vehicle(vehicle: VehicleProfile) void
-        +select_route(route: RouteProfile) void
-        +select_weather(weather_profile: WeatherProfile) void
+        +select_vehicle(vehicle: VehicleProfile, int: selected_vehicle_number) void
+        +select_route(route: RouteProfile, int: selected_route_number) void
+        +select_weather(weather_profile: WeatherProfile, int: selected_weather_number) void
         +set_capacity_percent(capacity_percent: float) void
     }
 
@@ -73,6 +73,7 @@ classDiagram
         +print_route(route_profiles: List~RouteProfile~) void
         +format_segment_list(segments: List~Segment~) str
         +print_segment(segments: List~Segment~) void
+        +print_selected_configuration(config: TripConfiguration) void
     }
 
     class RangeService {
