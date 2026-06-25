@@ -119,3 +119,15 @@ class ConsoleUI:
     @staticmethod
     def print_segment(route):
         print(ConsoleUI.format_segment_list(route.segments))
+
+    @staticmethod
+    def print_selected_configuration(config):
+        print("=== Ihre gewählte Konfiguration ===\n")
+        print(f"Fahrzeug   : {config.vehicle.name}")
+        print(f"Reichweite : {config.vehicle.range_km} km\n")
+        print(f"Route      : {config.route.name}")
+        print(f"Distanz    : {config.route.distance_km} km\n")
+        print(f"Wetter     : {config.weather.name}")
+        print(f"Temperatur : {config.weather.temperature_c} °C")
+        print(f"Zustand    : {config.weather.weather_condition}\n")
+        print(f"Ladestatus : {config.capacity_percent} %")
