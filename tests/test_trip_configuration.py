@@ -43,14 +43,14 @@ def test_select_weather_valid():
 
     trip_config.select_weather(weathers, 1)
 
-    assert trip_config.weatherprofile == weathers[0]
-    assert isinstance(trip_config.weatherprofile, WeatherProfile)
-    assert trip_config.weatherprofile.name == "Sonniger Sommertag"
-    assert trip_config.weatherprofile.temperature_c == 28
-    assert trip_config.weatherprofile.rain_mm_per_h == 0
-    assert trip_config.weatherprofile.wind_speed_kmh == 12
-    assert trip_config.weatherprofile.humidity_percent == 45
-    assert trip_config.weatherprofile.weather_condition == "sonnig"
+    assert trip_config.weather == weathers[0]
+    assert isinstance(trip_config.weather, WeatherProfile)
+    assert trip_config.weather.name == "Sonniger Sommertag"
+    assert trip_config.weather.temperature_c == 28
+    assert trip_config.weather.rain_mm_per_h == 0
+    assert trip_config.weather.wind_speed_kmh == 12
+    assert trip_config.weather.humidity_percent == 45
+    assert trip_config.weather.weather_condition == "sonnig"
 
 def test_select_route_valid():
     trip_config = TripConfiguration()

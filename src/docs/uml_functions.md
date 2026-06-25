@@ -56,7 +56,7 @@ classDiagram
     class TripConfiguration {
         +vehicle: VehicleProfile
         +route: RouteProfile
-        +weather_profile: WeatherProfile
+        +weather: WeatherProfile
         +capacity_percent: float
         +select_vehicle(vehicle: VehicleProfile): void
         +select_route(route: RouteProfile): void
