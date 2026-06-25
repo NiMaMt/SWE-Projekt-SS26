@@ -8,7 +8,7 @@ class TripConfiguration:
         # Typnotation. Heißt die Variable darf den Typ VehicleProfile oder None haben, wird aber hier als None initialisiert
         self.vehicle: VehicleProfile | None = None
         self.route: RouteProfile | None = None
-        self.weatherprofile: WeatherProfile | None = None
+        self.weather: WeatherProfile | None = None
         self.capacity_percent = None
 
     def select_vehicle(self, vehicles, selected_vehicle_number):
@@ -27,7 +27,7 @@ class TripConfiguration:
         if selected_weather_number < 1 or selected_weather_number > len(weathers):
             raise ValueError("Ungültige Wetterauswahl.")
 
-        self.weatherprofile = weathers[selected_weather_number - 1]
+        self.weather = weathers[selected_weather_number - 1]
 
     def select_route(self, routes, selected_route_number):
         if not routes:
