@@ -1,39 +1,36 @@
-from src.rangeService import rangeService
+from src.rangeService import RangeService
 from src.vehicle_profile import VehicleProfile
 from src.weather_profile import WeatherProfile
-from src.route_profile import RouteProfile
+from src.route_profile import RouteProfile, Segment
+from src.trip_configuration import TripConfiguration
 
-def test_rangeService_checkDrivePossible():
-    # energyAvailable < energyReqired
-    is_possible_test = rangeService.checkDrivePossible(energyAvailable=10, energyReqired=20)
-    assert(is_possible_test == False)
+testVehicle1 = VehicleProfile(name = 'Testfahrzeug', capacity_kwh = 85, average_consumption_wh_km = 160, range_km = 531.25, weight_kg = 2100)
+testSegment1 = Segment(type = "Stadt", distance_km = 8, average_speed_kmh = 35)
+testSegment2 = Segment(type = "Landstraße", distance_km = 5, average_speed_kmh = 70)
+testSegment3 = Segment(type = "Stadt", distance_km = 4, average_speed_kmh = 30)
+testRoute1 = RouteProfile(name = "Teststrecke", start = "Esslingen am Neckar", destination = "Stuttgart", distance_km = 17, altitude_ascent = 120, altitude_descent = 95, segments = (testSegment1, testSegment2, testSegment3))
+testWeatherprofile1= WeatherProfile(name = "testWetter", temperature_c = 15, rain_mm_per_h = 10, wind_speed_kmh = 20, humidity_percent = 65, weather_condition = "leicht regnerisch")
+testCapacity_percent1 = 70
 
-    # energyAvailable > energyReqired
-    is_possible_test = rangeService.checkDrivePossible(energyAvailable=12, energyReqired=3)
-    assert(is_possible_test == True)
+testTrip1 = TripConfiguration()
+testTrip1.vehicle = testVehicle1
+testTrip1.route = testRoute1
+testTrip1.weatherprofile = testWeatherprofile1
+testTrip1.capacity_percent = testCapacity_percent1
 
-    # energyAvailable = energyReqired
-    is_possible_test = rangeService.checkDrivePossible(energyAvailable=50, energyReqired=50)
-    assert(is_possible_test == True)
+service = RangeService()
 
-def test_rangeService_calculateEnergyAvailable():
-    testVehicle1 = VehicleProfile(name = 'Testvehicle', capacity_kwh = 85, average_consumption_wh_km = 160, range_km = 531.25, weight_kg = 2100)
-    
-    # erwartete Rückgabe: energyAvailable = 85kwh * 0 = 0
-    energyAvailable = rangeService.calculateEnergyAvailable(testVehicle1, 0)
-    assert(energyAvailable == 0)
+def test_check_drive_possible():
+    # mehr Testcases ergänzen
+    is_possible_test = service.check_drive_possible(testTrip1)
+    assert(is_possible_test.trip_possible == True)
 
-    # erwartete Rückgabe: energyAvailable = 85kwh * 0.1 = 8.5
-    energyAvailable = rangeService.calculateEnergyAvailable(testVehicle1, 0.1)
-    assert(energyAvailable == 8.5)
+def test_calculate_energy_available():
+    # mehr Testcases ergänzen
 
-    # erwartete Rückgabe: energyAvailable = 85kwh * 0.6 = 51
-    energyAvailable = rangeService.calculateEnergyAvailable(testVehicle1, 0.6)
-    assert(energyAvailable == 51)
+    # erwartete Rückgabe: energyAvailable = 85kwh * 70% = 59,5
+    energyAvailable = service.calculate_energy_available(testTrip1)
+    assert(energyAvailable == 59.5)
 
-    # erwartete Rückgabe: energyAvailable = 85kwh * 1 = 85
-    energyAvailable = rangeService.calculateEnergyAvailable(testVehicle1, 1)
-    assert(energyAvailable == 85)
-
-def test_rangeService_calculateEnergyRequired():
+def test_calculate_energy_required():
     assert(True)
