@@ -18,7 +18,7 @@ Energiebedarf grundsätzlich = Fahrzeugverbrauch pro Strecke * geplante Stecke
 
 Weitere Faktoren abhängig von verschiedenen Parametern:
 ### Art der Strecke:
-Faktor Staße -> 1.10
+Faktor Stadt -> 1.10
 Faktor Landstraße -> 0.95
 Faktor Autobahn -> 1.20
 

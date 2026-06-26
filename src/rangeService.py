@@ -7,7 +7,20 @@ class RangeService:
     
     @staticmethod
     def calculate_energy_required_wh(trip_configuration):
-        general_energy_needed = trip_configuration.vehicle.average_consumption_wh_km * trip_configuration.route.distance_km
+        #general_energy_needed = trip_configuration.vehicle.average_consumption_wh_km * trip_configuration.route.distance_km
+
+        road_dependent_energy_factors = {
+            "Stadt" : 1.10,
+            "Landstraße" : 0.95,
+            "Autobahn" : 1.20
+        }
+
+        general_energy_needed = 0
+
+        for segment in trip_configuration.route.segments:
+            general_energy_needed += trip_configuration.vehicle.average_consumption_wh_km * segment.distance_km
+            # road_type_factor = road_dependent_energy_factors[segment.type]
+
         return general_energy_needed
 
     @staticmethod
