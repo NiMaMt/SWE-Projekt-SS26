@@ -31,7 +31,7 @@ Faktor 120 km/h -> 1.20
 Faktor 150 km/h -> 1.45  
 
 ### Höhenmeter hoch:
-Umrechnung in Lageenergie, die zusätzlich aufgebracht werden muss mit E=m⋅g⋅h  
+Umrechnung in Lageenergie, die zusätzlich aufgebracht werden muss mit E=m \* g \* h  
 Umrechnung in kWh mit /3600
 
 ### Höhenmeter bergab:

@@ -30,11 +30,16 @@ class RangeService:
             segment_energy_required = trip_configuration.vehicle.average_consumption_wh_km * segment.distance_km
 
             road_type_factor = road_dependent_energy_factors[segment.type]
-            
+
             speed_factor_key = min(speed_dependent_energy_factors, key = lambda k: abs(k - segment.average_speed_kmh))
             speed_factor = speed_dependent_energy_factors[int(speed_factor_key)]
 
             energy_required += segment_energy_required * road_type_factor * speed_factor
+
+        # Umrechnung in Lageenergie, die zusätzlich aufgebracht werden muss mit E=m * g * h  
+        # Umrechnung in kWh mit /3600
+        # Höhenmeterbetrachtung:
+
 
         return round(energy_required, 2)
 

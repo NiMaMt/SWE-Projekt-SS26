@@ -34,5 +34,16 @@ def test_calculate_energy_available_wh():
 
 def test_calculate_energy_required_wh():
     energy_required = service.calculate_energy_required_wh(testTrip1)
-    # erwartet: 160Wh/km * 8km * 1,1 * 1,05 + 160Wh/km * 5km * 0,95 * 1,03 + 160Wh * 4km * 1,1 * 1,05 = 3000,4Wh
-    assert(energy_required == 3000.4)
+    # erwartet:
+    # Strecke,          Straßentyp, Geschwindigkeit (je Segment):
+    # 160Wh/km * 8km    * 1,1       * 1,05
+    # + 160Wh/km * 5km  * 0,95      * 1,03
+    # + 160Wh * 4km     * 1,1       * 1,05 = 3000,4Wh
+    # 
+    # Höhenmeter:
+    # m        * g         * h      (Umrechnung in Wh)
+    # + 2100kg * 9,81m/s^2 * 120m / 3600 = 686,7Wh
+    #
+    #--------------------------------------------------
+    #                                    = 3687,1
+    assert(energy_required == 3687.1)
