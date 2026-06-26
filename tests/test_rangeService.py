@@ -48,6 +48,10 @@ def test_calculate_energy_required_wh():
     # -  m     * g         * h    (Umrechnung in Wh) * Effizienz
     # + 2100kg * 9,81m/s^2 * -95 / 3600              * 0.65 = - 353,36
     #
+    # Temperatur (Heizung, Klima, Batterieheizung)
+    # max. 0,5h von Fahrtzeit * Energiebedarf + ((Fahrtzeit -0.5h) * 0,5 * Energiebedarf) - falls Fahrzeit > 0,5h
+    # 0.43h                   * 300W     = 129Wh
+    #
     #--------------------------------------------------
-    #                                    = 3333,74
-    assert(energy_required == 3333.74)
+    #                                    = 3462,74
+    assert(energy_required == 3462.74)

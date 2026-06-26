@@ -28,6 +28,16 @@ class RangeService:
             150 : 1.45
         }
 
+        temperature_dependent_energy_val = {
+        # Temp. : Energiebedarf in W
+            35 : 2500,  
+            25 : 1000,  
+            15 : 300,
+            5 : 2000,
+            -5 : 3500,
+            -15 : 5000
+        }
+
         energy_required = 0
 
         for segment in trip_configuration.route.segments:
@@ -51,7 +61,9 @@ class RangeService:
         # Umrechnung in kWh mit /3600
         energy_gain_downhill = trip_configuration.vehicle.weight_kg * G * trip_configuration.route.altitude_descent * RECUPERATION_EFFICIENCY / FACTOR_J_TO_WH
         energy_required -= energy_gain_downhill
-        
+
+
+
         return round(energy_required, 2)
 
     @staticmethod
