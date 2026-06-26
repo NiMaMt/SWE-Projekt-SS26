@@ -15,13 +15,16 @@ class RangeService:
             "Autobahn" : 1.20
         }
 
-        general_energy_needed = 0
+        energy_required = 0
 
         for segment in trip_configuration.route.segments:
-            general_energy_needed += trip_configuration.vehicle.average_consumption_wh_km * segment.distance_km
-            # road_type_factor = road_dependent_energy_factors[segment.type]
+            segment_energy_required = trip_configuration.vehicle.average_consumption_wh_km * segment.distance_km
 
-        return general_energy_needed
+            road_type_factor = road_dependent_energy_factors[segment.type]
+            
+            energy_required += segment_energy_required * road_type_factor
+
+        return energy_required
 
     @staticmethod
     def check_drive_possible(trip_configuration):
