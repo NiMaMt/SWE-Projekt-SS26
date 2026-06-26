@@ -1,5 +1,8 @@
 from src.check_trip_possibility import CheckTripPossibility
 
+G = float(9.81) # Erdbeschleunigung in m/s^2
+FACTOR_J_TO_WH = 3600 # Umrechnungsfaktor Joule in Wh
+
 class RangeService:
     @staticmethod
     def calculate_energy_available_wh(trip_configuration):
@@ -36,10 +39,11 @@ class RangeService:
 
             energy_required += segment_energy_required * road_type_factor * speed_factor
 
+        # Höhenmeterbetrachtung:
         # Umrechnung in Lageenergie, die zusätzlich aufgebracht werden muss mit E=m * g * h  
         # Umrechnung in kWh mit /3600
-        # Höhenmeterbetrachtung:
-
+        energy_required_uphill = trip_configuration.vehicle.weight_kg * G * trip_configuration.route.altitude_ascent / FACTOR_J_TO_WH
+        energy_required += energy_required_uphill
 
         return round(energy_required, 2)
 
