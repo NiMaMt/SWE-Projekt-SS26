@@ -14,6 +14,48 @@ Berechnung: maximale Energie der Fahrzeugbatterie * Ladezustand
 
 `RangeService.calculateEnergyReqired`
 
+Energiebedarf grundsätzlich = Fahrzeugverbrauch pro Strecke * geplante Stecke
+
+Weitere Faktoren abhängig von verschiedenen Parametern:
+### Art der Strecke:
+Faktor Staße -> 1.10
+Faktor Landstraße -> 0.95
+Faktor Autobahn -> 1.20
+
+### Geschwindigkeit auf Streckenabschnitten:
+Faktor 30 km/h -> 1.05  
+Faktor 50 km/h -> 1.00  
+Faktor 70 km/h -> 1.03  
+Faktor 90 km/h -> 1.08  
+Faktor 120 km/h -> 1.20  
+Faktor 150 km/h -> 1.45  
+
+### Höhenmeter hoch:
+Umrechnung in Lageenergie, die zusätzlich aufgebracht werden muss mit E=m⋅g⋅h  
+Umrechnung in kWh mit /3600
+
+### Höhenmeter bergab:
+Nutzung der Lageenergie zur Rekuperation unter Berücksichtigung der Effizienz (Bsp.65%)
+
+### Temperatur:
+Mehrverbrauch für Heizung / Klimaanlage + ggf. Batterie heizen:  
+0,5h von Fahrtzeit \* Energiebedarf/h + Fahrtzeit -0.5h \* Energiebedarf/h  
+\>30°C -> 2,5 kWh/h  
+30-20°C -> 1 kWh/h  
+10–20°C -> 0,3 kWh/h  
+0–10°C -> 2 kWh/h  
+-10–0°C -> 3,5 kWh/h  
+<-10°C -> 5 kWh/h  
+
+### Regen:
+Erhöhter Rollwiderstand durch Wasser auf der Fahrbahn:  
+Regenfaktor = 1 + Niederschlag in mm/h \* 0,005  
+ergibt:  
+0 mm/h    -> 1.00  
+4 mm/h    -> 1.02  
+10 mm/h   -> 1.05  
+16 mm/h   -> 1.08  
+
 ## Prüfung ob Fahrt möglich ist
 
 `RangeService.checkDrivePossible`  
