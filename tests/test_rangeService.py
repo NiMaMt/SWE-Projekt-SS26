@@ -53,5 +53,5 @@ def test_calculate_energy_required_wh():
     # 0.43h                   * 300W     = 129Wh
     #
     #--------------------------------------------------
-    #                                    = 3462,74
+    #                                    = 3462,74Wh
     assert(energy_required == 3462.74)

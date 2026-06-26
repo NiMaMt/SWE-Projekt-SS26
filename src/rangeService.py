@@ -11,15 +11,14 @@ class RangeService:
     
     @staticmethod
     def calculate_energy_required_wh(trip_configuration):
-        #general_energy_needed = trip_configuration.vehicle.average_consumption_wh_km * trip_configuration.route.distance_km
-
         road_dependent_energy_factors = {
             "Stadt" : 1.10,
             "Landstraße" : 0.95,
             "Autobahn" : 1.20
         }
 
-        speed_dependent_energy_factors = {  # Geschwindigkeit in km/h
+        speed_dependent_energy_factors = {
+        # Geschwindigkeit in km/h : Faktor
             30 : 1.05,  
             50 : 1.00,
             70 : 1.03,
@@ -38,9 +37,12 @@ class RangeService:
             -15 : 5000
         }
 
+        travel_time_h = 0
         energy_required = 0
 
         for segment in trip_configuration.route.segments:
+            travel_time_h += round(segment.distance_km / segment.average_speed_kmh, 2)
+
             segment_energy_required = trip_configuration.vehicle.average_consumption_wh_km * segment.distance_km
 
             road_type_factor = road_dependent_energy_factors[segment.type]
@@ -62,7 +64,17 @@ class RangeService:
         energy_gain_downhill = trip_configuration.vehicle.weight_kg * G * trip_configuration.route.altitude_descent * RECUPERATION_EFFICIENCY / FACTOR_J_TO_WH
         energy_required -= energy_gain_downhill
 
+        # Temperatur:
+        # max. 0,5h von Fahrtzeit * Energiebedarf + ((Fahrtzeit -0.5h) * 0,5 * Energiebedarf) - falls Fahrzeit > 0,5h
+        temperature_dependent_energy_val_key = min(temperature_dependent_energy_val, key = lambda k: abs(k - trip_configuration.weather.temperature_c))
+        power_temperature_required = temperature_dependent_energy_val[int(temperature_dependent_energy_val_key)]
 
+        if(travel_time_h <= 0.5):
+            energy_temperature_required = power_temperature_required * travel_time_h
+        else:
+            energy_temperature_required = power_temperature_required * 0.5 + (travel_time_h - 0.5) * 0.5 * power_temperature_required
+
+        energy_required += energy_temperature_required
 
         return round(energy_required, 2)
 
