@@ -18,15 +18,15 @@ Energiebedarf grundsätzlich = Fahrzeugverbrauch pro Strecke * geplante Stecke
 
 Weitere Faktoren abhängig von verschiedenen Parametern:
 ### Art der Strecke:
-Faktor Stadt	  -> 1.10
+Faktor Staße -> 1.10
 Faktor Landstraße -> 0.95
-Faktor Autobahn	  -> 1.20
+Faktor Autobahn -> 1.20
 
 ### Geschwindigkeit auf Streckenabschnitten:
-Faktor 30 km/h  -> 1.05  
-Faktor 50 km/h  -> 1.00  
-Faktor 70 km/h  -> 1.03  
-Faktor 90 km/h  -> 1.08  
+Faktor 30 km/h -> 1.05  
+Faktor 50 km/h -> 1.00  
+Faktor 70 km/h -> 1.03  
+Faktor 90 km/h -> 1.08  
 Faktor 120 km/h -> 1.20  
 Faktor 150 km/h -> 1.45  
 
@@ -40,12 +40,12 @@ Nutzung der Lageenergie zur Rekuperation unter Berücksichtigung der Effizienz (
 ### Temperatur:
 Mehrverbrauch für Heizung / Klimaanlage + ggf. Batterie heizen:  
 Fahrtzeit * Energiebedarf/h (gestaffelt, da anfangs mehr als später)  
-\>30°C  ->  
+\>30°C ->  
 30-20°C ->  
 10–20°C ->  
-0–10°   ->  
+0–10°C ->  
 -10–0°C ->  
-<-10°   ->  
+<-10°C ->  
 
 ### Regen:
 Erhöhter Rollwiderstand durch Wasser auf der Fahrbahn:  
