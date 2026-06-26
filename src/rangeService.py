@@ -2,6 +2,7 @@ from src.check_trip_possibility import CheckTripPossibility
 
 G = float(9.81) # Erdbeschleunigung in m/s^2
 FACTOR_J_TO_WH = 3600 # Umrechnungsfaktor Joule in Wh
+RECUPERATION_EFFICIENCY = float(0.65) # 65%
 
 class RangeService:
     @staticmethod
@@ -45,6 +46,12 @@ class RangeService:
         energy_required_uphill = trip_configuration.vehicle.weight_kg * G * trip_configuration.route.altitude_ascent / FACTOR_J_TO_WH
         energy_required += energy_required_uphill
 
+        # Höhenmeter bergab (rekuperation):
+        # m * g * h * Effizienz
+        # Umrechnung in kWh mit /3600
+        energy_gain_downhill = trip_configuration.vehicle.weight_kg * G * trip_configuration.route.altitude_descent * RECUPERATION_EFFICIENCY / FACTOR_J_TO_WH
+        energy_required -= energy_gain_downhill
+        
         return round(energy_required, 2)
 
     @staticmethod
