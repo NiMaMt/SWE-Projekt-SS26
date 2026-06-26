@@ -39,17 +39,17 @@ Nutzung der Lageenergie zur Rekuperation unter Berücksichtigung der Effizienz (
 
 ### Temperatur:
 Mehrverbrauch für Heizung / Klimaanlage + ggf. Batterie heizen:  
-Fahrtzeit * Energiebedarf/h (gestaffelt, da anfangs mehr als später)  
-\>30°C ->  
-30-20°C ->  
-10–20°C ->  
-0–10°C ->  
--10–0°C ->  
-<-10°C ->  
+0,5h von Fahrtzeit \* Energiebedarf/h + Fahrtzeit -0.5h \* Energiebedarf/h  
+\>30°C -> 2,5 kWh/h  
+30-20°C -> 1 kWh/h  
+10–20°C -> 0,3 kWh/h  
+0–10°C -> 2 kWh/h  
+-10–0°C -> 3,5 kWh/h  
+<-10°C -> 5 kWh/h  
 
 ### Regen:
 Erhöhter Rollwiderstand durch Wasser auf der Fahrbahn:  
-Regenfaktor = 1 + Niederschlag in mm/h * 0,005  
+Regenfaktor = 1 + Niederschlag in mm/h \* 0,005  
 ergibt:  
 0 mm/h    -> 1.00  
 4 mm/h    -> 1.02  
