@@ -40,10 +40,14 @@ def test_calculate_energy_required_wh():
     # + 160Wh/km * 5km  * 0,95      * 1,03
     # + 160Wh * 4km     * 1,1       * 1,05 = 3000,4Wh
     # 
-    # Höhenmeter:
-    # m        * g         * h      (Umrechnung in Wh)
+    # Höhenmeter bergauf:
+    # m        * g         * h    (Umrechnung in Wh)
     # + 2100kg * 9,81m/s^2 * 120m / 3600 = 686,7Wh
     #
+    # Höhenmeter bergab (rekuperation):
+    # -  m     * g         * h    (Umrechnung in Wh) * Effizienz
+    # + 2100kg * 9,81m/s^2 * -95 / 3600              * 0.65 = - 353,36
+    #
     #--------------------------------------------------
-    #                                    = 3687,1
-    assert(energy_required == 3687.1)
+    #                                    = 3333,74
+    assert(energy_required == 3333.74)
