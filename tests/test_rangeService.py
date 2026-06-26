@@ -15,7 +15,7 @@ testCapacity_percent1 = 70
 testTrip1 = TripConfiguration()
 testTrip1.vehicle = testVehicle1
 testTrip1.route = testRoute1
-testTrip1.weatherprofile = testWeatherprofile1
+testTrip1.weather = testWeatherprofile1
 testTrip1.capacity_percent = testCapacity_percent1
 
 service = RangeService()
@@ -25,12 +25,13 @@ def test_check_drive_possible():
     is_possible_test = service.check_drive_possible(testTrip1)
     assert(is_possible_test.trip_possible == True)
 
-def test_calculate_energy_available():
+def test_calculate_energy_available_wh():
     # mehr Testcases ergänzen
 
-    # erwartete Rückgabe: energyAvailable = 85kwh * 70% = 59,5
-    energyAvailable = service.calculate_energy_available(testTrip1)
-    assert(energyAvailable == 59.5)
+    # erwartete Rückgabe: energyAvailable = 85kwh * 70% = 59500 Wh
+    energyAvailable = service.calculate_energy_available_wh(testTrip1)
+    assert(energyAvailable == 59500)
 
-def test_calculate_energy_required():
-    assert(True)
+def test_calculate_energy_required_wh():
+    energy_required = service.calculate_energy_required_wh(testTrip1)
+    assert(energy_required == 2720) # erwartet: 17km * 160 Wh/km = 2720 Wh
