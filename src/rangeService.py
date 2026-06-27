@@ -52,6 +52,10 @@ class RangeService:
 
             energy_required += segment_energy_required * road_type_factor * speed_factor
 
+        # Regeneinfluss (erhöhter Rollwiderstand)
+        rain_factor = 1 + trip_configuration.weather.rain_mm_per_h * 0.005
+        energy_required *= rain_factor
+
         # Höhenmeterbetrachtung:
         # Umrechnung in Lageenergie, die zusätzlich aufgebracht werden muss mit E=m * g * h  
         # Umrechnung in kWh mit /3600
