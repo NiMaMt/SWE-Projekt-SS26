@@ -15,7 +15,7 @@ testCapacity_percent1 = 70
 testTrip1 = TripConfiguration()
 testTrip1.vehicle = testVehicle1
 testTrip1.route = testRoute1
-testTrip1.weatherprofile = testWeatherprofile1
+testTrip1.weather = testWeatherprofile1
 testTrip1.capacity_percent = testCapacity_percent1
 
 service = RangeService()
@@ -25,12 +25,37 @@ def test_check_drive_possible():
     is_possible_test = service.check_drive_possible(testTrip1)
     assert(is_possible_test.trip_possible == True)
 
-def test_calculate_energy_available():
+def test_calculate_energy_available_wh():
     # mehr Testcases ergänzen
 
-    # erwartete Rückgabe: energyAvailable = 85kwh * 70% = 59,5
-    energyAvailable = service.calculate_energy_available(testTrip1)
-    assert(energyAvailable == 59.5)
+    # erwartete Rückgabe: energyAvailable = 85kwh * 70% = 59500 Wh
+    energyAvailable = service.calculate_energy_available_wh(testTrip1)
+    assert(energyAvailable == 59500)
 
-def test_calculate_energy_required():
-    assert(True)
+def test_calculate_energy_required_wh():
+    energy_required = service.calculate_energy_required_wh(testTrip1)
+    # erwartet:
+    # Strecke,          Straßentyp, Geschwindigkeit (je Segment):
+    # 160Wh/km * 8km    * 1,1       * 1,05
+    # + 160Wh/km * 5km  * 0,95      * 1,03
+    # + 160Wh * 4km     * 1,1       * 1,05 = (3000,4Wh)
+    #
+    # Regen (erhöhter Rollwiderstand):
+    # 3000,4Wh * (1 + Niederschlag in mm/h * 0,005)
+    # 3000,4 * 1,05                        = 3150,42
+    # 
+    # Höhenmeter bergauf:
+    # m        * g         * h    (Umrechnung in Wh)
+    # + 2100kg * 9,81m/s^2 * 120m / 3600 = 686,7Wh
+    #
+    # Höhenmeter bergab (rekuperation):
+    # -  m     * g         * h    (Umrechnung in Wh) * Effizienz
+    # + 2100kg * 9,81m/s^2 * -95 / 3600              * 0.65 = - 353,36
+    #
+    # Temperatur (Heizung, Klima, Batterieheizung)
+    # max. 0,5h von Fahrtzeit * Energiebedarf + ((Fahrtzeit -0.5h) * 0,5 * Energiebedarf) - falls Fahrzeit > 0,5h
+    # 0.43h                   * 300W     = 129Wh
+    #
+    #--------------------------------------------------
+    #                                    = 3612,76Wh
+    assert(energy_required == 3612.76)
