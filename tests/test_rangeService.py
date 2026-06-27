@@ -38,7 +38,11 @@ def test_calculate_energy_required_wh():
     # Strecke,          Straßentyp, Geschwindigkeit (je Segment):
     # 160Wh/km * 8km    * 1,1       * 1,05
     # + 160Wh/km * 5km  * 0,95      * 1,03
-    # + 160Wh * 4km     * 1,1       * 1,05 = 3000,4Wh
+    # + 160Wh * 4km     * 1,1       * 1,05 = (3000,4Wh)
+    #
+    # Regen (erhöhter Rollwiderstand):
+    # 3000,4Wh * (1 + Niederschlag in mm/h * 0,005)
+    # 3000,4 * 1,05                        = 3150,42
     # 
     # Höhenmeter bergauf:
     # m        * g         * h    (Umrechnung in Wh)
@@ -53,5 +57,5 @@ def test_calculate_energy_required_wh():
     # 0.43h                   * 300W     = 129Wh
     #
     #--------------------------------------------------
-    #                                    = 3462,74Wh
-    assert(energy_required == 3462.74)
+    #                                    = 3612,76Wh
+    assert(energy_required == 3612.76)
