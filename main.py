@@ -141,6 +141,7 @@ def main():
         ConsoleUI.print_selected_configuration(trip_config)
         
         
+
         #-----Berechnung-----
         print("=== Routenberechnung ===")
         print("Ihre Route wird berechnet...")
@@ -148,11 +149,15 @@ def main():
         trip_possibility = RangeService.check_drive_possible(trip_config)
 
         if trip_possibility.trip_possible:
+            # Umrechnung von Wh in kWh für die Ausgabe
+            residual_capacity_kwh = trip_possibility.residual_capacity_wh / 1000
             print("Die Fahrt ist mit Ihrem aktuellen Batteriestand möglich")
-            print(f"Erwartete Restkapazität am Ziel: {trip_possibility.residual_capacity_kwh:.2f} kWh")
+            print(f"Erwartete Restkapazität am Ziel: {residual_capacity_kwh:.2f} kWh")
         else:
+            # Umrechnung von Wh in kWh für die Ausgabe
+            lack_capacity_kwh = trip_possibility.lack_capacity_wh / 1000
             print("!ACHTUNG! Das Erreichen des Ziels ist mit Ihrem aktuellen Batteriestand NICHT möglich")
-            print(f"Fehlende Kapazität: {trip_possibility.lack_capacity_kwh:.2f} kWh")
+            print(f"Fehlende Kapazität: {lack_capacity_kwh:.2f} kWh")
             user_decision = get_valid_string_choice("Möchten Sie eine Ladestation auf Ihrer Route suchen? (J/N)", "J", "N")
             print(f"Diese Funktion ist mit ihrem aktuellen Abonnement leider nicht verfügbar. Bitte kontaktieren Sie ihren Service Partner für weitere Informationen.\n")
 
@@ -161,6 +166,8 @@ def main():
     except Exception as e:
         print(f"Unerwarteter Fehler: {e}")
         return False
+    
+
     
 
     
