@@ -119,9 +119,10 @@ Nach dem Start der Anwendung in deinem Terminal wirst du interaktiv durch den Pr
 
 In diesem Beispiel wird ein Audi A6 Sportback e-tron mit 80% Ladung bei heißem Sommerwetter auf der Route Stuttgart -> München simuliert. Die Anwendung bestätigt, dass die Fahrt möglich ist.
 
-===========================================
-Weather-aware EV Range Assistant started
-===========================================
+================================
+Weather-aware EV Range Assistant
+================================
+
 
 Lade Fahrzeugdaten...
 Lade Wetterdaten...
@@ -129,7 +130,7 @@ Lade Routendaten...
 Alle Daten erfolgreich geladen.
 
 === Fahrzeugauswahl ===
-Nr. Name                                       Battery    Consumption         Range      Weight
+Nr. Name                                     Kapazität      Verbrauch    Reichweite     Gewicht
 -----------------------------------------------------------------------------------------------
 1   Kia EV3                                   78.0 kWh     171.0 Wh/km     455.0 km    1885.0 kg
 2   Volkswagen ID.Polo                        51.7 kWh     154.0 Wh/km     335.0 km    1576.0 kg
@@ -146,8 +147,8 @@ Wählen Sie ein Fahrzeug durch Eingabe der entsprechenden Nummer: 7
 Gewähltes Fahrzeug: Audi A6 Sportback e-tron
 
 === Wetterauswahl ===
-Nr. Name                             Temp.        Rain        Wind  Humidity   Condition
-----------------------------------------------------------------------------------------
+Nr. Name                             Temp.       Regen        Wind    Luftf.   Zustand
+--------------------------------------------------------------------------------------
 1   Sonniger Sommertag              28.0 °C     0.0 mm/h    12.0 km/h  45.0%   sonnig
 2   Leichter Regen                  17.0 °C     2.5 mm/h    20.0 km/h  78.0%   regnerisch
 3   Starker Regen und Wind          11.0 °C     9.8 mm/h    55.0 km/h  92.0%   sturm
@@ -161,18 +162,18 @@ Wählen Sie ein Wetter durch Eingabe der entsprechenden Nummer: 7
 Gewähltes Wetter: Heißer Sommertag
 
 === Routenauswahl ===
-Nr. Name                               Start                  Destination                Distance      Ascent     Descent
+Nr. Name                               Start                  Ziel                        Distanz    +Höhenm.    -Höhenm.
 -------------------------------------------------------------------------------------------------------------------------
-1   Esslingen am Neckar -> Stuttgart   Esslingen am Neckar    Stuttgart                     17 km      120 hm       95 hm
-2   Reutlingen -> Ulm                  Reutlingen             Ulm                           95 km      420 hm      380 hm
-3   Stuttgart -> Munich                Stuttgart              München                      220 km      760 hm      690 hm
-4   Freudenstadt -> Stuttgart          Freudenstadt           Stuttgart                     90 km      540 hm      710 hm
-5   Darmstadt -> Frankfurt am Main     Darmstadt              Frankfurt am Main             35 km      110 hm      140 hm
-6   Frankfurt am Main -> Cologne       Frankfurt am Main      Köln                         190 km      680 hm      640 hm
-7   Berlin -> Hanover                  Berlin                 Hannover                     285 km      320 hm      300 hm
-8   Hannover -> Hamburg                Hannover               Hamburg                      155 km      180 hm      170 hm
-9   Stuttgart -> Berlin                Stuttgart              Berlin                       635 km     1250 hm     1180 hm
-10  München -> Hamburg                 München                Hamburg                      780 km     1480 hm     1420 hm
+1   Esslingen am Neckar -> Stuttgart   Esslingen am Neckar    Stuttgart                     17 km      120 m       95 m
+2   Reutlingen -> Ulm                  Reutlingen             Ulm                           95 km      420 m      380 m
+3   Stuttgart -> Munich                Stuttgart              München                      220 km      760 m      690 m
+4   Freudenstadt -> Stuttgart          Freudenstadt           Stuttgart                     90 km      540 m      710 m
+5   Darmstadt -> Frankfurt am Main     Darmstadt              Frankfurt am Main             35 km      110 m      140 m
+6   Frankfurt am Main -> Cologne       Frankfurt am Main      Köln                         190 km      680 m      640 m
+7   Berlin -> Hanover                  Berlin                 Hannover                     285 km      320 m      300 m
+8   Hannover -> Hamburg                Hannover               Hamburg                      155 km      180 m      170 m
+9   Stuttgart -> Berlin                Stuttgart              Berlin                       635 km     1250 m     1180 m
+10  München -> Hamburg                 München                Hamburg                      780 km     1480 m     1420 m
 
 Wählen Sie eine Route durch Eingabe der entsprechenden Nummer: 3
 Gewählte Route: Stuttgart -> Munich
@@ -198,6 +199,7 @@ Ladestatus : 80.0 %
 === Routenberechnung ===
 Ihre Route wird berechnet...
 Die Fahrt ist mit Ihrem aktuellen Batteriestand möglich
+Erwartete Restkapazität am Ziel: 7.46 kWh
 ```
 
 ```bash
@@ -205,9 +207,10 @@ Die Fahrt ist mit Ihrem aktuellen Batteriestand möglich
 
 In diesem Beispiel wird ein Škoda Epiq 55 mit 20% Ladung bei einem bewölktem Herbsttag auf der Route München -> Hamburg simuliert. Die Anwendung bestätigt, dass die Fahrt NICHT möglich ist.
 
-===========================================
-Weather-aware EV Range Assistant started
-===========================================
+================================
+Weather-aware EV Range Assistant
+================================
+
 
 Lade Fahrzeugdaten...
 Lade Wetterdaten...
@@ -215,7 +218,7 @@ Lade Routendaten...
 Alle Daten erfolgreich geladen.
 
 === Fahrzeugauswahl ===
-Nr. Name                                       Battery    Consumption         Range      Weight
+Nr. Name                                     Kapazität      Verbrauch    Reichweite     Gewicht
 -----------------------------------------------------------------------------------------------
 1   Kia EV3                                   78.0 kWh     171.0 Wh/km     455.0 km    1885.0 kg
 2   Volkswagen ID.Polo                        51.7 kWh     154.0 Wh/km     335.0 km    1576.0 kg
@@ -232,8 +235,8 @@ Wählen Sie ein Fahrzeug durch Eingabe der entsprechenden Nummer: 10
 Gewähltes Fahrzeug: Škoda Epiq 55
 
 === Wetterauswahl ===
-Nr. Name                             Temp.        Rain        Wind  Humidity   Condition
-----------------------------------------------------------------------------------------
+Nr. Name                             Temp.       Regen        Wind    Luftf.   Zustand
+--------------------------------------------------------------------------------------
 1   Sonniger Sommertag              28.0 °C     0.0 mm/h    12.0 km/h  45.0%   sonnig
 2   Leichter Regen                  17.0 °C     2.5 mm/h    20.0 km/h  78.0%   regnerisch
 3   Starker Regen und Wind          11.0 °C     9.8 mm/h    55.0 km/h  92.0%   sturm
@@ -247,18 +250,18 @@ Wählen Sie ein Wetter durch Eingabe der entsprechenden Nummer: 5
 Gewähltes Wetter: Bewölkter Herbsttag
 
 === Routenauswahl ===
-Nr. Name                               Start                  Destination                Distance      Ascent     Descent
+Nr. Name                               Start                  Ziel                        Distanz    +Höhenm.    -Höhenm.
 -------------------------------------------------------------------------------------------------------------------------
-1   Esslingen am Neckar -> Stuttgart   Esslingen am Neckar    Stuttgart                     17 km      120 hm       95 hm
-2   Reutlingen -> Ulm                  Reutlingen             Ulm                           95 km      420 hm      380 hm
-3   Stuttgart -> Munich                Stuttgart              München                      220 km      760 hm      690 hm
-4   Freudenstadt -> Stuttgart          Freudenstadt           Stuttgart                     90 km      540 hm      710 hm
-5   Darmstadt -> Frankfurt am Main     Darmstadt              Frankfurt am Main             35 km      110 hm      140 hm
-6   Frankfurt am Main -> Cologne       Frankfurt am Main      Köln                         190 km      680 hm      640 hm
-7   Berlin -> Hanover                  Berlin                 Hannover                     285 km      320 hm      300 hm
-8   Hannover -> Hamburg                Hannover               Hamburg                      155 km      180 hm      170 hm
-9   Stuttgart -> Berlin                Stuttgart              Berlin                       635 km     1250 hm     1180 hm
-10  München -> Hamburg                 München                Hamburg                      780 km     1480 hm     1420 hm
+1   Esslingen am Neckar -> Stuttgart   Esslingen am Neckar    Stuttgart                     17 km      120 m       95 m
+2   Reutlingen -> Ulm                  Reutlingen             Ulm                           95 km      420 m      380 m
+3   Stuttgart -> Munich                Stuttgart              München                      220 km      760 m      690 m
+4   Freudenstadt -> Stuttgart          Freudenstadt           Stuttgart                     90 km      540 m      710 m
+5   Darmstadt -> Frankfurt am Main     Darmstadt              Frankfurt am Main             35 km      110 m      140 m
+6   Frankfurt am Main -> Cologne       Frankfurt am Main      Köln                         190 km      680 m      640 m
+7   Berlin -> Hanover                  Berlin                 Hannover                     285 km      320 m      300 m
+8   Hannover -> Hamburg                Hannover               Hamburg                      155 km      180 m      170 m
+9   Stuttgart -> Berlin                Stuttgart              Berlin                       635 km     1250 m     1180 m
+10  München -> Hamburg                 München                Hamburg                      780 km     1480 m     1420 m
 
 Wählen Sie eine Route durch Eingabe der entsprechenden Nummer: 10
 Gewählte Route: München -> Hamburg
@@ -284,4 +287,5 @@ Ladestatus : 20.0 %
 === Routenberechnung ===
 Ihre Route wird berechnet...
 !ACHTUNG! Das Erreichen des Ziels ist mit Ihrem aktuellen Batteriestand NICHT möglich
+Fehlende Kapazität: 179.58 kWh
 ```
