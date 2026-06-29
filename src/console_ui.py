@@ -6,10 +6,10 @@ class ConsoleUI:
             f"{'Nr.':<4}"
             f"{'Name':<30}"
             f"{'Temp.':>8}"
-            f"{'Rain':>12}"
+            f"{'Regen':>12}"
             f"{'Wind':>12}"
-            f"{'Humidity':>10}"
-            f"   Condition"
+            f"{'Luftf.':>10}"
+            f"   Zustand"
         )
  
         separation_line = "-" * len(header)
@@ -37,10 +37,10 @@ class ConsoleUI:
         header = (
             f"{'Nr.':<4}"
             f"{'Name':<38}"
-            f"{'Battery':>12}"
-            f"{'Consumption':>15}"
-            f"{'Range':>14}"
-            f"{'Weight':>12}"
+            f"{'Kapazität':>12}"
+            f"{'Verbrauch':>15}"
+            f"{'Reichweite':>14}"
+            f"{'Gewicht':>12}"
         )
  
         separation_line = "-" * len(header)
@@ -68,10 +68,10 @@ class ConsoleUI:
             f"{'Nr.':<4}"
             f"{'Name':<35}"
             f"{'Start':<23}"
-            f"{'Destination':<23}"
-            f"{'Distance':>12}"
-            f"{'Ascent':>12}"
-            f"{'Descent':>12}"
+            f"{'Ziel':<23}"
+            f"{'Distanz':>12}"
+            f"{'+Höhenm.':>12}"
+            f"{'-Höhenm.':>12}"
         )
  
         separation_line = "-" * len(header)
@@ -84,8 +84,8 @@ class ConsoleUI:
                 f"{item.start:<23}"
                 f"{item.destination:<23}"
                 f"{item.distance_km:>9} km"
-                f"{item.altitude_ascent:>9} hm"
-                f"{item.altitude_descent:>9} hm"
+                f"{item.altitude_ascent:>9} m"
+                f"{item.altitude_descent:>9} m"
             )
  
         return "\n".join(rows)
@@ -98,9 +98,9 @@ class ConsoleUI:
     def format_segment_list(data):
         header = (
             f"{'Nr.':<4}"
-            f"{'Type of Route':<18}"
-            f"{'Length':<12}"
-            f"{'Average speed':<15}"
+            f"{'Routentyp':<18}"
+            f"{'Länge':<12}"
+            f"{'Durchschnittsgeschw.':<15}"
         )
  
         separation_line = "-" * len(header)

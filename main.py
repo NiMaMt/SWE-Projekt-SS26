@@ -4,9 +4,9 @@ from src.trip_configuration import TripConfiguration
 from src.rangeService import RangeService
 
 def main():
-    print("===========================================")
-    print("Weather-aware EV Range Assistant started")
-    print("===========================================\n\n")
+    print("================================")
+    print("Weather-aware EV Range Assistant")
+    print("================================\n\n")
 
     try:
         #-----Daten laden-----
