@@ -47,7 +47,8 @@ Weitere Faktoren abhängig von verschiedenen Parametern:
 
 #### Höhenmeter hoch
 
-Umrechnung in Lageenergie, die zusätzlich aufgebracht werden muss mit \(E = m \cdot g \cdot h\)
+Umrechnung in Lageenergie, die zusätzlich aufgebracht werden muss mit:
+$$E = m \cdot g \cdot h$$
 Umrechnung in kWh mit /3600
 
 #### Höhenmeter bergab
@@ -57,7 +58,7 @@ Nutzung der Lageenergie zur Rekuperation unter Berücksichtigung der Effizienz (
 #### Temperatur
 
 Mehrverbrauch für Heizung / Klimaanlage + ggf. Batterie heizen:
-0,5h von Fahrtzeit * Energiebedarf/h + (Fahrtzeit -0.5h) * 0,5 * Energiebedarf/h
+$$0,5h \cdot \text{Energiebedarf/h} + (\text{Fahrtzeit} - 0,5h) \cdot 0,5 \cdot \text{Energiebedarf/h}$$
 
 *   \>30°C -> 2,5 kWh/h
 *   30-20°C -> 1 kWh/h
@@ -69,7 +70,7 @@ Mehrverbrauch für Heizung / Klimaanlage + ggf. Batterie heizen:
 #### Regen
 
 Erhöhter Rollwiderstand durch Wasser auf der Fahrbahn:
-Regenfaktor = 1 + Niederschlag in mm/h * 0,005
+$$\text{Regenfaktor} = 1 + \text{Niederschlag in mm/h} \cdot 0,005$$
 ergibt:
 
 *   0 mm/h -> 1.00
