@@ -74,6 +74,13 @@ classDiagram
         +format_segment_list(segments: List~Segment~) str
         +print_segment(segments: List~Segment~) void
         +print_selected_configuration(config: TripConfiguration) void
+        +get_integer_input(prompt: str, min_value=None, max_value=None) int
+        +get_float_input(prompt: str, min_value=None, max_value=None) float
+        +get_string_choice(prompt: str, option1: str, option2: str) str
+        +select_vehicle(trip_config: TripConfiguration, vehicles: List~VehicleProfile~) void
+        +select_weather(trip_config: TripConfiguration, weathers: List~WeatherProfile~) void
+        +select_route(trip_config: TripConfiguration, routes: List~RouteProfile~) void
+        +set_capacity_percent(trip_config: TripConfiguration) void
     }
 
     class RangeService {
