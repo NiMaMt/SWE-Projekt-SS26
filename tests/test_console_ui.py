@@ -47,8 +47,8 @@ def test_print_route(capsys):
     assert "Start" in captured.out
     assert "Ziel" in captured.out
     assert "300 km" in captured.out or "300.0 km" in captured.out
-    assert "20 hm" in captured.out or "20.0 hm" in captured.out
-    assert "30 hm" in captured.out or "30.0 hm" in captured.out
+    assert "20 m" in captured.out or "20.0 m" in captured.out
+    assert "30 m" in captured.out or "30.0 m" in captured.out
 
 # Test ausgewählte Konfiguration in Konsole
 def test_print_selected_configuration(capsys):
