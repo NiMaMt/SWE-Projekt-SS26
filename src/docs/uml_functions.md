@@ -58,9 +58,9 @@ classDiagram
         +route: RouteProfile
         +weather: WeatherProfile
         +capacity_percent: float
-        +select_vehicle(vehicle: VehicleProfile, int: selected_vehicle_number) void
-        +select_route(route: RouteProfile, int: selected_route_number) void
-        +select_weather(weather_profile: WeatherProfile, int: selected_weather_number) void
+        +select_vehicle(vehicles: List ~VehicleProfile~, int: selected_vehicle_number) void
+        +select_route(route: List ~RouteProfile~, int: selected_route_number) void
+        +select_weather(weather_profile: List ~WeatherProfile~, int: selected_weather_number) void
         +set_capacity_percent(capacity_percent: float) void
     }
 
@@ -93,14 +93,15 @@ classDiagram
     DataLoader ..> VehicleProfile : lädt
     DataLoader ..> RouteProfile : lädt
     DataLoader ..> WeatherProfile : lädt
-    TripConfiguration --> VehicleProfile
-    TripConfiguration --> RouteProfile
-    TripConfiguration --> WeatherProfile
-    RangeService --> TripConfiguration
-    RangeService --> CheckTripPossibility
-    ConsoleUI --> VehicleProfile : nutzt
-    ConsoleUI --> RouteProfile : nutzt
-    ConsoleUI --> WeatherProfile : nutzt
-    ConsoleUI --> Segment : nutzt
+    TripConfiguration "1" --> "0..1" VehicleProfile
+    TripConfiguration "1" --> "0..1" RouteProfile
+    TripConfiguration "1" --> "0..1" WeatherProfile
+    RangeService ..> TripConfiguration : nutzt
+    RangeService ..> CheckTripPossibility : erstellt
+    ConsoleUI ..> VehicleProfile : nutzt
+    ConsoleUI ..> RouteProfile : nutzt
+    ConsoleUI ..> WeatherProfile : nutzt
+    ConsoleUI ..> Segment : nutzt
+    ConsoleUI ..> TripConfiguration : nutzt
 
 ```
